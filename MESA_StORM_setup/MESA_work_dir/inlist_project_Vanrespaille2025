@@ -1,0 +1,209 @@
+&star_job
+
+    !!! Master inlist contains all fixed values for grid !!!
+    ! Varied parameters given to run_star_extras.f through command-line include:
+    ! Initial metallicity: Zini
+    ! Initial Mass: Mini
+    ! Base envelope mixing value: logD (structure of mixing set in run_star_extras.f)
+    ! Core overshoot: fov or aov (depending on setting)
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! Whether we start from a pre-existing model is set in run_star_extras based on whether a preMS run is done
+    create_pre_main_sequence_model = .false.
+
+    ! save a model at the end of the run (name set in run_star_extras.f)
+    save_photo_when_terminate = .true.
+
+    ! display on-screen plots
+    pgstar_flag = .false.
+
+    ! history and profile columns (additional variables to be output)
+    history_columns_file = 'history_columns_Vanrespaille2025.list'
+    profile_columns_file = 'profile_columns_Vanrespaille2025.list'
+
+    ! pre_ms_T_c is an initial guess of the pre-main sequence starting condition.
+    pre_ms_T_c = 6d5 ! --> Standard is pre_ms_T_c = 3d5
+    pre_ms_relax_num_steps = 100
+
+    ! Expand original nuclear network of isotopes (by Dr. Hannah Brinkman)
+    change_net = .true.
+    new_net_name = 'Brinkman_pp_cno_alphabackbone.net' ! full pp/cno chains + alpha backbone to Fe and Ni
+    change_initial_net = .true.
+    show_net_species_info = .true.
+
+    ! Add your own cache paths!
+    eosDT_cache_dir = ''
+    ionization_cache_dir = ''
+    kap_cache_dir = ''
+    rates_cache_dir = ''
+    rate_tables_dir = ''
+
+    initial_zfracs = 6      ! A09 mixture
+
+/ !end of star_job namelist
+
+
+&controls
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! MIXING CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! Custom mixing profile
+    use_other_D_mix = .true.
+
+    ! IGW mixing profile
+    x_logical_ctrl(1) = .true.
+    x_ctrl(1) = -1d0 ! --> IGW exponent, lies somewhere between -1/2 and -1 (Rogers & McElwaine 2017).
+    set_min_D_mix = .true. ! Set in run_star_extras
+
+    ! Do not smooth N^2
+    num_cells_for_smooth_gradL_composition_term = 0
+    num_cells_for_smooth_brunt_B = 0
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! CONVECTION CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! These are standard options, but kept for clarity (except change to 'Henyey' method for MLT)
+    alpha_semiconvection = 0d0
+    semiconvection_option = 'Langer_85 mixing; gradT = gradr'
+    thermohaline_coeff = 0d0
+    alt_scale_height_flag = .true.
+
+    ! Change MLT method from Cox to Henyey to treat optically thin convective regions better + treat super-adiabadicity
+    ! Changing this has a noticeable effect (w.r.t. observational data) on high-order (n_pg>3) p modes
+    MLT_option = 'Henyey'
+    mixing_length_alpha = 2.0d0
+    mlt_gradT_fraction = -1
+
+    ! MLT++ (no differences in speed or pulsation character)
+    okay_to_reduce_gradT_excess = .false. ! MLT++ off
+
+    ! Conv. boundaries: Use Ledoux criterion and do premixing.
+    use_Ledoux_criterion = .true.
+    do_conv_premix = .true.
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! OVERSHOOTING CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! This only includes those controls not set in run_star_extras, which is most of them as it relies on the input for f_ov and a_ov.
+
+    ! Turn on overshooting/undershooting for (one fixed value for all):
+    ! - H-burning shell at end of MS/post-MS,
+    ! - Envelope convection zones near ionization regions (MS).
+    ! Give value, beware that should be higher than f0 = 0.005 (amount of Hp scheme goes inside zone)
+    ! I set 2*f0 as my fixed value in order to smoothen out the convective boundaries
+    x_logical_ctrl(2) = .true.
+    x_ctrl(2) = 0.01d0   ! f overshoot
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! ATMOSPHERE/WIND CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! Mass loss
+    hot_wind_scheme = 'Vink'
+    Vink_scaling_factor = 0.3d0 ! --> Puls, J., (2015, IAU3017 proceeding), Bjorklund et al. 2020
+
+    ! Atmosphere options (following advice of MESA VI and Hannah Brinkman)
+    atm_option = 'T_tau'
+    atm_table = 'Eddington'
+    atm_T_tau_opacity = 'varying'
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! OUTPUT CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! Mostly set in run_star_extras.f
+    ! A .GYRE stellar model is written every time a profile is saved
+
+    write_profiles_flag = .false.
+    photo_interval = 500000
+
+    ! Control parameters to set saving intervals in run_star_extras.f.
+    ! 1) Linear saving: two steps (starting at ZAMS up to red edge)
+    x_ctrl(3) = 0.0075d0  ! Intervals to save before X_c = 0.25
+    x_ctrl(4) = 0.005d0 ! Intervals to save after X_c = 0.25
+    ! 2) Log saving: After red edge we make sure to sample enough (see run_star_extras.f for longer explanation)
+    x_ctrl(5) = 2d0   ! Exponent indicates steepness towards %s xa_central_lower_limit
+    x_ctrl(6) = 1.0d0 ! How many times we want to save between red edge and core H exhaustion (in steps of 0.1)
+
+    ! Save to history file every step
+    history_interval = 1
+
+    ! More details of output in run_star_extras.f . We save GYRE input with the profile using our own naming convention
+    pulse_data_format = 'GYRE'
+    write_pulse_data_with_profile = .false.
+
+    ! Used for GYRE saving (see logicals in run_star_extras.f)
+    add_atmosphere_to_pulse_data = .true.
+    keep_surface_point_for_pulse_data = .false.
+    add_center_point_to_pulse_data = .true.
+
+    ! Used during pulse calculations (adds double points at discontinuities, which is what GYRE prefers)
+    ! The current StORM version however does not handle these at the moment, so turn them off for future projects!
+    add_double_points_to_pulse_data = .true.
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! TERMINATION CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! Set to false when running from ZAMS to TAMS!
+    stop_near_zams = .false.
+
+    ! stop when the center mass fraction of h1 drops below this limit
+    xa_central_lower_limit_species(1) = 'h1'
+    xa_central_lower_limit(1) = 1d-4
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! MESH & RESOLUTION & NUMERIC CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ! Meshing
+    varcontrol_target = 1d-3  ! 5d-5
+    min_allowed_varcontrol_target = 1d-4
+    mesh_delta_coeff = 0.4d0 ! --> increases overall resolution by about 2.5
+    time_delta_coeff = 0.8d0
+
+    max_allowed_nz = 40000 ! maximum number of grid points allowed
+    mesh_adjust_get_T_from_E = .true.
+
+  ! Additional resolution based on the pressure and temperature profiles
+    mesh_dlogX_dlogP_extra = 0.15d0           ! resol coeff for chemical gradients
+    mesh_dlogX_dlogP_full_on = 1d-6           ! additional resol on for gradient larger than this
+    mesh_dlogX_dlogP_full_off = 1d-12         ! additional resol off for gradient smaller than this
+    mesh_logX_species(1) = 'he4'              ! taking into account abundance of He4
+
+    ! these are to properly resolve core hydrogen depletion
+    delta_lg_XH_cntr_limit = 0.02d0
+    delta_lg_XH_cntr_max = 0.0d0
+    delta_lg_XH_cntr_min = -6.0d0
+    delta_lg_XH_cntr_hard_limit = 0.03d0
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! CORE/H-burning RESOLUTION CONTROLS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  ! Additional resolution near the boundaries of the convective regions (now set inside run_star_extras since v.12778)
+    use_other_mesh_delta_coeff_factor = .true.
+
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    !! OTHER CHANGES BY MATHIJS
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    ! activating gold tolerances and energy conservation
+    energy_eqn_option = 'dedt'
+    use_gold_tolerances = .true.
+/ ! end of controls namelist
+
+&kap
+    ! Opacity tables to use
+    kap_file_prefix = 'OP_a09_nans_removed_by_hand'
+    kap_CO_prefix = 'a09_co'
+    kap_lowT_prefix = 'lowT_fa05_a09p'
+
+    use_Type2_opacities = .true.   ! new default
+    !ZBase is set in run_star_extras
+/ ! end of kap namelist
+
+&eos
+    use_FreeEOS = .true.
+/ ! end of eos namelist

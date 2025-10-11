@@ -1,0 +1,90 @@
+!#This file is just for the rates
+
+&star_job
+    num_special_rate_factors = 21
+!#d_h_to_he3
+    reaction_for_special_factor(1) = 'r_h2_pg_he3'
+    special_rate_factor(1) = 1
+    filename_of_special_rate(1) = 'h2_p_to_gamma_he3.txt'
+!#d_d_to_n_he3
+    reaction_for_special_factor(2) = 'r_h2_h2_to_neut_he3'
+    special_rate_factor(2) = 1
+    filename_of_special_rate(2) = 'h2_h2_to_n_he3.txt'
+!#d_alpha_to_gamma_li6
+    reaction_for_special_factor(3) = 'r_h2_ag_li6'
+    special_rate_factor(3) = 1
+    filename_of_special_rate(3) = 'h2_he4_to_gamma_li6.txt'
+!#he3_alpha_to_gamma_be7
+    reaction_for_special_factor(4) = 'r_he3_ag_be7'
+    special_rate_factor(4) = 1
+    filename_of_special_rate(4) = 'he3_he4_to_gamma_be7.txt'
+!#triplealpha
+    reaction_for_special_factor(5) = 'r_he4_he4_he4_to_c12'
+    special_rate_factor(5) = 1
+    filename_of_special_rate(5) = 'he4_he4_he4_to_gamma_c12.txt'
+!#li6_p_to_alpha_he3
+    reaction_for_special_factor(6) = 'r_li6_pa_he3'
+    special_rate_factor(6) = 1
+    filename_of_special_rate(6) = 'li6_p_to_alpha_he3.txt'
+!#li7_p_to_alpha_he4 and li7_p_to_gamma_be8_to_alpha_alpha
+    reaction_for_special_factor(7) = 'r_li7_pa_he4'
+    special_rate_factor(7) = 1
+    filename_of_special_rate(7) = 'li7_p_to_alpha_alpha.txt'
+!#c12_p_to_gamma_n13
+    reaction_for_special_factor(8) = 'r_c12_pg_n13'
+    special_rate_factor(8) = 1
+    filename_of_special_rate(8) = 'c12_p_to_gamma_n13.txt'
+!#c12_alpha_to_gamma_o16
+    reaction_for_special_factor(9) = 'r_c12_ag_o16'
+    special_rate_factor(9) = 1
+    filename_of_special_rate(9) = 'c12_alpha_to_gamma_o16.txt'
+!#c13_alpha_to_n_o16
+    reaction_for_special_factor(10) = 'r_c13_an_o16'
+    special_rate_factor(10) = 1
+    filename_of_special_rate(10) = 'c13_alpha_to_n_o16.txt'
+!#n14_p_to_gamma_o15
+    ! Provided by Hannah
+    reaction_for_special_factor(11) = 'r_n14_pg_o15'
+    special_rate_factor(11) = 1
+    filename_of_special_rate(11) = 'n14_p_to_gamma_o15.txt'
+!#n14_alpha_to_gamma_f18
+    reaction_for_special_factor(12) = 'r_n14_ag_f18'
+    special_rate_factor(12) = 1
+    filename_of_special_rate(12) = 'n14_alpha_to_gamma_f18.txt'
+!#n15_p_to_gamma_o16
+    reaction_for_special_factor(13) = 'r_n15_pg_o16'
+    special_rate_factor(13) = 1
+    filename_of_special_rate(13) = 'n15_p_to_gamma_o16.txt'
+!#n15_alpha_to_gamma_f19
+    reaction_for_special_factor(14) = 'r_n15_ag_f19'
+    special_rate_factor(14) = 1
+    filename_of_special_rate(14) = 'n15_alpha_to_gamma_f19.txt'
+!#o16_p_to_gamma_f17
+    reaction_for_special_factor(15) = 'r_o16_pg_f17'
+    special_rate_factor(15) = 1
+    filename_of_special_rate(15) = 'o16_p_to_gamma_f17.txt'
+!#o16_alpha_to_gamma_ne20
+    reaction_for_special_factor(16) = 'r_o16_ag_ne20'
+    special_rate_factor(16) = 1
+    filename_of_special_rate(16) = 'o16_alpha_to_gamma_ne20.txt'
+!#o17_p_to_gamma_f18
+    reaction_for_special_factor(17) = 'r_o17_pg_f18'
+    special_rate_factor(17) = 1
+    filename_of_special_rate(17) = 'o17_p_to_gamma_f18.txt'
+!#o17_p_to_alpha_n14
+    reaction_for_special_factor(18) = 'r_o17_pa_n14'
+    special_rate_factor(18) = 1
+    filename_of_special_rate(18) = 'o17_p_to_alpha_n14.txt'
+!#o18_p_to_gamma_f19
+    reaction_for_special_factor(19) = 'r_o18_pg_f19'
+    special_rate_factor(19) = 1
+    filename_of_special_rate(19) = 'o18_p_to_gamma_f19.txt'
+!#o18_p_to_alpha_n15
+    reaction_for_special_factor(20) = 'r_o18_pa_n15'
+    special_rate_factor(20) = 1
+    filename_of_special_rate(20) = 'o18_p_to_alpha_n15.txt'
+!#ne20_alpha_to_gamma_mg24
+    reaction_for_special_factor(21) = 'r_ne20_ag_mg24'
+    special_rate_factor(21) = 1
+    filename_of_special_rate(21) = 'ne20_alpha_to_gamma_mg24.txt'
+/ ! end of star_job namelist
