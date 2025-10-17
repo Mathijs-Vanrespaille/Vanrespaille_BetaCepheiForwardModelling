@@ -1,0 +1,19 @@
+input INFILE
+set-rotation-constant --frequency-units=dynamical FROT
+deform --frequency-units=dynamical FROT
+scan 0 0 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 1 -1 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 1 0 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 1 1 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 2 -2 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 2 -1 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 2 0 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 2 1 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+scan 2 2 2.0 15.0 520 --frequency-units=cycles-per-day --difference-scheme=magnus4
+post-process
+perturb-deformed -2
+perturb-deformed -1
+perturb-deformed 0
+perturb-deformed 1
+perturb-deformed 2
+output --properties=radial-order,degree,azimuthal-order,frequency,deformed-frequency --model-properties=dynamical-frequency,deformation-beta,deformation-dbeta,deformation-ddbeta,deformation-alpha,deformation-dalpha,deformation-ddalpha,deformation-rotation-frequency,deformation-mass-change --frequency-units=cycles-per-day OUTFILE
