@@ -1,84 +1,124 @@
 J/A+A/vol/page  Asteroseismic modelling of 36 β Cep stars  (Vanrespaille+, 2026)
 ================================================================================
-Asteroseismic forward modelling of 36 β Cep pulsators and inferences on their 
+Asteroseismic forward modelling of 36 β Cep pulsators and inferences on their
 internal differential rotation
      Vanrespaille M., Fritzewski D.J., Vanlaer V., Aerts C.
     <Astron. Astrophys. vol, page (year)>
     =2003A&A...VVV.ppppI     (SIMBAD/NED BibCode)
 ================================================================================
 Keywords_ADC: Stars, ages ; Stars, OB ; Stars, variable ; Stars, normal
-Keywords: Asteroseismology – Stars: oscillations (including pulsations) – 
-	  Stars: massive – Stars: interiors – Stars: evolution –
-	  Stars: rotation
+Keywords: Asteroseismology – Stars: oscillations – Stars: massive – 
+          Stars: interiors – Stars: evolution – Stars: rotation
 
-Abstract: 
-    Asteroseismic observations of the interior rotation of main-sequence stars 
-    have shown that angular momentum transport is much more efficient than 
-    expected. What transport mechanisms are responsible for this is still 
-    unclear. The massive {beta} Cep pulsators are promising stars to constrain 
-    these mechanisms as they are the only main-sequence pulsators to regularly 
-    display differential rotation. However, fewer than ten {beta} Cep stars 
+Abstract:
+    Asteroseismic observations of the interior rotation of main-sequence stars
+    have shown that angular momentum transport is much more efficient than
+    expected. What transport mechanisms are responsible for this is still
+    unclear. The massive {beta} Cep pulsators are promising stars to constrain
+    these mechanisms as they are the only main-sequence pulsators to regularly
+    display differential rotation. However, fewer than ten {beta} Cep stars
     have been asteroseismically modelled so far.
 
-    We aim to expand the sample of asteroseismically forward modelled {beta} Cep 
+    We aim to expand the sample of asteroseismically forward modelled {beta} Cep
     pulsators to maximally exploit their potential to observationally constrain
-    angular momentum transport mechanisms. To that end, we seek measurements of 
+    angular momentum transport mechanisms. To that end, we seek measurements of
     differential rotation.
-    
-    We searched for rotational splitting in a large {beta} Cep sample with 
-    partial mode identifications. These are subjected to a novel forward 
-    modelling approach that consistently takes second-order rotation effects 
+
+    We searched for rotational splitting in a large {beta} Cep sample with
+    partial mode identifications. These are subjected to a novel forward
+    modelling approach that consistently takes second-order rotation effects
     into account.
 
-    36 {beta} Cep stars have successfully been modelled, constraining their 
-    mass, age, rotation frequency, core overshoot and envelope mixing, among 
-    other parameters. Herein, accounting for second-order effects of rotation 
-    significantly affects the rotation estimates when the rotation rate exceeds 
-    10% of the critical rotation rate. Like intermediate-mass main-sequence 
-    stars, the rotation rate decreases as the stars evolve. Differential 
-    rotation is constrained in 17 stars, with the rotation rate in at least 14 
+    36 {beta} Cep stars have successfully been modelled, constraining their
+    mass, age, rotation frequency, core overshoot and envelope mixing, among
+    other parameters. Herein, accounting for second-order effects of rotation
+    significantly affects the rotation estimates when the rotation rate exceeds
+    10% of the critical rotation rate. Like intermediate-mass main-sequence
+    stars, the rotation rate decreases as the stars evolve. Differential
+    rotation is constrained in 17 stars, with the rotation rate in at least 14
     of them varying by over 10%.
 
-    We show differential rotation is commonplace in {beta} Cep stars. Prevailing 
-    features in the differential rotation suggests {beta} Cep typically have a 
+    We show differential rotation is commonplace in {beta} Cep stars. Prevailing
+    features in the differential rotation suggests {beta} Cep typically have a
     non-monotonic rotation profile.
 
 Description:
     ObsInput.dat: Observational properties of beta Cephei stars observed with
-    Gaia and TESS. It includes the effective temperature, luminosity and 
-    quantities used to compute that luminosity, the identified signals 
-    including their frequency and its uncertainty, amplitude, radial order, 
-    degree, and azimuthal order. 
-    
-    Models.dat: The chosen parameters of the statistical models of each star 
-    with a satisfactory fit, including their initial mass, envelope mixing 
-    strength, core overshoot parameter, central hydrogen mass fraction, age, 
-    optimal rotation frequency, radius, surface gravity, effective 
-    temperature, luminosity, and convective core mass. 
-    
-    RotSplit.dat: The observed and best model's rotational splitting in each 
+    Gaia and TESS. It includes the effective temperature, luminosity and
+    quantities used to compute that luminosity, the identified signals
+    including their frequency and its uncertainty, amplitude, radial order,
+    degree, and azimuthal order.
+
+    Models1.dat: The chosen parameters of the statistical models of each star
+    with a satisfactory fit, including their initial mass, envelope mixing
+    strength, core overshoot parameter, central hydrogen mass fraction, age,
+    optimal rotation frequency, radius, surface gravity, effective
+    temperature, luminosity, and convective core mass. Herein, we used the
+    of oscillation computations of StORM and included the rotational
+    splitting in the optimisation of the model. These are the results
+    presented in the paper.
+
+    Models2.dat: The chosen parameters of the statistical models of each star
+    with a satisfactory fit, including their initial mass, envelope mixing
+    strength, core overshoot parameter, central hydrogen mass fraction, age,
+    optimal rotation frequency, radius, surface gravity, effective
+    temperature, luminosity, and convective core mass. Herein, we used the
+    alternative method using the oscillation computations of StORM, but
+    excluding the rotational splitting in the optimisation of the model.
+
+    Models3.dat: The chosen parameters of the statistical models of each star
+    with a satisfactory fit, including their initial mass, envelope mixing
+    strength, core overshoot parameter, central hydrogen mass fraction, age,
+    optimal rotation frequency, radius, surface gravity, effective
+    temperature, luminosity, and convective core mass. Herein, we used the
+    alternative method using the oscillation computations of GYRE,
+    including the rotational splitting in the optimisation of the model.
+
+    Models4.dat: The chosen parameters of the statistical models of each star
+    with a satisfactory fit, including their initial mass, envelope mixing
+    strength, core overshoot parameter, central hydrogen mass fraction, age,
+    optimal rotation frequency, radius, surface gravity, effective
+    temperature, luminosity, and convective core mass. Herein, we used the
+    alternative method using the oscillation computations of GYRE, and
+    excluding the rotational splitting in the optimisation of the model.
+
+    RotSplit.dat: The observed and best model's rotational splitting in each
     identified multiplet used in the asteroseismic modelling. It includes the
-    rotational splitting of each observed part of each multiplet as well as 
-    the best model's counterpart. If sufficient modes are observed, the 
-    asymmetry is also included. Note that there is one line per mode or 
-    multiplet with a unique (n,l), not one line per star. 
-    
-    DiffRot.dat: The measurements of internal and surface rotation used to 
-    study differential rotation in Section 6 of the accompanying paper. It 
-    includes the Gaia surface rotation frequencies, if available, and the 
-    optimal rotation associated with each rotationally split multiplet 
-    and the relative radius where each multiplet is most sensitive.  
-    
+    rotational splitting of each observed part of each multiplet as well as
+    the best model's counterpart. If sufficient modes are observed, the
+    asymmetry is also included. Note that there is one line per mode or
+    multiplet with a unique (n,l), not one line per star.
+
+    DiffRot.dat: The measurements of internal and surface rotation used to
+    study differential rotation in Section 6 of the accompanying paper. It
+    includes the Gaia surface rotation frequencies, if available, and the
+    optimal rotation associated with each rotationally split multiplet
+    and the relative radius where each multiplet is most sensitive.
+
 File Summary:
 --------------------------------------------------------------------------------
   FileName   Lrecl  Records   Explanations
 --------------------------------------------------------------------------------
 ReadMe.txt      80        .   This file
-ObsInput.dat 10396       43   The 43 stars considered and their observational 
-                               input for 43 stars considered
-Models.dat     561       36   Essential parameters of asteroseismic forward 
+ObsInput.dat 10406       43   The 43 stars considered and their observational
+                               input
+Models1.dat    561       36   Essential parameters of asteroseismic forward
                                models of 36 stars with a satisfactory fit
-RotSplit.dat   428       81   Observed and modelled asymmetric rotational 
+                               from StORM including rotational splitting in
+                               the optimisation
+Models2.dat    561       36   Essential parameters of asteroseismic
+                               models of 36 stars with a satisfactory fit
+                               from StORM excluding rotational splitting in
+                               the optimisation
+Models3.dat    561       36   Essential parameters of asteroseismic
+                               models of 36 stars with a satisfactory fit
+                               from GYRE including rotational splitting in
+                               the optimisation
+Models4.dat    561       36   Essential parameters of asteroseismic
+                               models of 36 stars with a satisfactory fit
+                               from GYRE including rotational splitting in
+                               the optimisation
+RotSplit.dat   428       81   Observed and modelled asymmetric rotational
                                splitting of each multiplet
 DiffRot.dat    594       36   Differential rotation constraints
 --------------------------------------------------------------------------------
@@ -96,258 +136,480 @@ Byte-by-byte Description of file: ObsInput.dat
                                            magnitude
         101  I1     ---    goodFit          ? Whether a satisfactory model was
                                            found
-  103-  112  A10    ---    Teff_source      ? source of effective temperature
+  103-  126  A24    ---    Teff_source      ? source of effective temperature
                                            measurement
-  114-  129  F16.14 K      log_Teff         [4.3/4.55]? log10 of effective
+  128-  143  F16.14 K      log_Teff         [4.3/4.55]? log10 of effective
                                            temperature
-  131-  151  F21.19 K      e_log_Teff       [0.0/0.02]? uncertainty on log10 of
+  145-  165  F21.19 K      e_log_Teff       [0.0/0.02]? uncertainty on log10 of
                                            effective temperature
-  153-  168  F16.14 solLum log_L            [3.72/5.25]? log10 luminosity
-  170-  189  F20.18 solLum e_log_L          [0.01/0.04]? uncertainty on log10
+  167-  182  F16.14 solLum log_L            [3.72/5.25]? log10 luminosity
+  184-  203  F20.18 solLum e_log_L          [0.01/0.04]? uncertainty on log10
                                            luminosity
-  191-  208  F18.16 mas    plx              [0.19/4.8]? Gaia parallax
-  210-  229  F20.18 mas    e_plx            [0.0/0.25]? uncertainty on Gaia
+  205-  222  F18.16 mas    plx              [0.19/4.8]? Gaia parallax
+  224-  243  F20.18 mas    e_plx            [0.0/0.25]? uncertainty on Gaia
                                            parallax
-  231-  240  F10.6  km.s-1 vsini            ? projected surface velocity
+  245-  254  F10.6  km.s-1 vsini            ? projected surface velocity
                                            measured by Gaia's ESP-HS pipeline
-  242-  251  F10.7  km.s-1 e_vsini          [3.0/44.04]? uncertainty on
+  256-  265  F10.7  km.s-1 e_vsini          [3.0/44.04]? uncertainty on
                                            projected surface velocity measured
                                            by Gaia's ESP-HS pipeline
-  253-  270  F18.13 pc     distance         [274.93/5158.86]? Distance from
+  267-  284  F18.13 pc     distance         [274.93/5158.86]? Distance from
                                            Gaia's ESP-HS or GSPPHOT_OB pipelines
-  272-  281  F10.8  ---    Ag               [0.13/4.48]? Extinction measured by
+  286-  295  F10.8  ---    Ag               [0.13/4.48]? Extinction measured by
                                            Gaia's ESP-HS pipeline
-  283-  300  F18.15 ---    Gmag             [3.25/12.91]? Mean G-band apparent
+  297-  314  F18.15 ---    Gmag             [3.25/12.91]? Mean G-band apparent
                                            magnitude
-  302-  319  F18.16 d-1    Gaia_frot_sini   ? ESP-HS projected surface rotation
+  316-  333  F18.16 d-1    Gaia_frot_sini   ? ESP-HS projected surface rotation
                                            frequency
-  321-  338  F18.16 d-1    e_Gaia_frot_sini [0.04/0.26]? uncertainty on ESP-HS
+  335-  352  F18.16 d-1    e_Gaia_frot_sini [0.04/0.26]? uncertainty on ESP-HS
                                            projected surface rotation frequency
-        340  I1     ---    Nm_IDs           [2/4]? number of identified radial
+        354  I1     ---    Nm_IDs           [2/4]? number of identified radial
                                            modes and multiplets
-  342-  343  I2     ---    Nf_IDs           [3/15]? number of identified
+  356-  357  I2     ---    Nf_IDs           [3/15]? number of identified
                                            frequencies
-        345  I1     ---    i1               [1]? index of multiplet this
+        359  I1     ---    i1               [1]? index of multiplet this
                                            identified signal is part of
-  347-  348  I2     ---    n1               [-1/3]? radial order of identified
+  361-  362  I2     ---    n1               [-1/3]? radial order of identified
                                            signal
-        350  I1     ---    l1               ? degree of identified signal
-  352-  353  I2     ---    m1               ? azimuthal order of identified
+        364  I1     ---    l1               ? degree of identified signal
+  366-  367  I2     ---    m1               ? azimuthal order of identified
                                            signal
-  355-  372  F18.16 d-1    f1               [3.99/9.74]? frequency of identified
+  369-  386  F18.16 d-1    f1               [3.99/9.74]? frequency of identified
                                            signal
-  374-  378  F5.3   d-1    e_f1             [0.0/0.01]? uncertainty on frequency
+  388-  392  F5.3   d-1    e_f1             [0.0/0.01]? uncertainty on frequency
                                            of identified signal
-  380-  398  F19.16 ---    a1               [0.0/40.8]? amplitude of identified
+  394-  411  F18.16 ---    a1               [0.0/2.6]? amplitude of identified
                                            signal
-        400  I1     ---    i2               [1/2]? index of multiplet this
+        413  I1     ---    i2               [1/2]? index of multiplet this
                                            identified signal is part of
-  402-  403  I2     ---    n2               [-2/3]? radial order of identified
+  415-  416  I2     ---    n2               [-2/3]? radial order of identified
                                            signal
-        405  I1     ---    l2               [1/2]? degree of identified signal
-  407-  408  I2     ---    m2               [-1/1]? azimuthal order of
+        418  I1     ---    l2               [1/2]? degree of identified signal
+  420-  421  I2     ---    m2               [-1/1]? azimuthal order of
                                            identified signal
-  410-  428  F19.16 d-1    f2               [3.88/10.37]? frequency of
+  423-  441  F19.16 d-1    f2               [3.88/10.37]? frequency of
                                            identified signal
-  430-  434  F5.3   d-1    e_f2             [0.0/0.01]? uncertainty on frequency
+  443-  447  F5.3   d-1    e_f2             [0.0/0.01]? uncertainty on frequency
                                            of identified signal
-  436-  454  F19.16 ---    a2               [0.0/22.3]? amplitude of identified
+  449-  466  F18.16 ---    a2               [0.0/0.1]? amplitude of identified
                                            signal
-        456  I1     ---    i3               [1/2]? index of multiplet this
+        468  I1     ---    i3               [1/2]? index of multiplet this
                                            identified signal is part of
-  458-  459  I2     ---    n3               [-2/3]? radial order of identified
+  470-  471  I2     ---    n3               [-2/3]? radial order of identified
                                            signal
-        461  I1     ---    l3               ? degree of identified signal
-  463-  464  I2     ---    m3               [-1/2]? azimuthal order of
+        473  I1     ---    l3               ? degree of identified signal
+  475-  476  I2     ---    m3               [-1/2]? azimuthal order of
                                            identified signal
-  466-  484  F19.16 d-1    f3               [3.97/11.04]? frequency of
+  478-  496  F19.16 d-1    f3               [3.97/11.04]? frequency of
                                            identified signal
-  486-  490  F5.3   d-1    e_f3             [0.0/0.01]? uncertainty on frequency
+  498-  502  F5.3   d-1    e_f3             [0.0/0.01]? uncertainty on frequency
                                            of identified signal
-  492-  510  F19.16 ---    a3               [0.0/27.1]? amplitude of identified
+  504-  521  F18.16 ---    a3               [0.0/2.7]? amplitude of identified
                                            signal
-        512  I1     ---    i4               [1/3]? index of multiplet this
+        523  I1     ---    i4               [1/3]? index of multiplet this
                                            identified signal is part of
-  514-  515  I2     ---    n4               [-2/3]? radial order of identified
+  525-  526  I2     ---    n4               [-2/3]? radial order of identified
                                            signal
-        517  I1     ---    l4               ? degree of identified signal
-  519-  520  I2     ---    m4               [-2/2]? azimuthal order of
+        528  I1     ---    l4               ? degree of identified signal
+  530-  531  I2     ---    m4               [-2/2]? azimuthal order of
                                            identified signal
-  522-  539  F18.16 d-1    f4               [3.8/7.98]? frequency of identified
+  533-  550  F18.16 d-1    f4               [3.8/7.98]? frequency of identified
                                            signal
-  541-  545  F5.3   d-1    e_f4             [0.0/0.01]? uncertainty on frequency
+  552-  556  F5.3   d-1    e_f4             [0.0/0.01]? uncertainty on frequency
                                            of identified signal
-  547-  565  F19.16 ---    a4               [0.0/24.5]? amplitude of identified
+  558-  575  F18.16 ---    a4               [0.0/0.03]? amplitude of identified
                                            signal
-        567  I1     ---    i5               [1/3]? index of multiplet this
+        577  I1     ---    i5               [1/3]? index of multiplet this
                                            identified signal is part of
-  569-  570  I2     ---    n5               [-2/2]? radial order of identified
+  579-  580  I2     ---    n5               [-2/2]? radial order of identified
                                            signal
-        572  I1     ---    l5               ? degree of identified signal
-  574-  575  I2     ---    m5               [-2/2]? azimuthal order of
+        582  I1     ---    l5               ? degree of identified signal
+  584-  585  I2     ---    m5               [-2/2]? azimuthal order of
                                            identified signal
-  577-  594  F18.16 d-1    f5               [3.25/7.65]? frequency of identified
+  587-  604  F18.16 d-1    f5               [3.25/7.65]? frequency of identified
                                            signal
-  596-  600  F5.3   d-1    e_f5             [0.0/0.01]? uncertainty on frequency
+  606-  610  F5.3   d-1    e_f5             [0.0/0.01]? uncertainty on frequency
                                            of identified signal
-  602-  622  E21.16 ---    a5               [0.0/12.7]? amplitude of identified
+  612-  632  E21.16 ---    a5               [0.0/0.02]? amplitude of identified
                                            signal
-  624-  625  I2     ---    i6               ? index of multiplet this identified
+  634-  635  I2     ---    i6               ? index of multiplet this identified
                                            signal is part of
-  627-  628  I2     ---    n6               ? radial order of identified signal
-  630-  631  I2     ---    l6               ? degree of identified signal
-  633-  634  I2     ---    m6               ? azimuthal order of identified
+  637-  638  I2     ---    n6               ? radial order of identified signal
+  640-  641  I2     ---    l6               ? degree of identified signal
+  643-  644  I2     ---    m6               ? azimuthal order of identified
                                            signal
-  636-  652  F17.15 d-1    f6               ? frequency of identified signal
-  654-  658  F5.3   d-1    e_f6             ? uncertainty on frequency of
+  646-  662  F17.15 d-1    f6               ? frequency of identified signal
+  664-  668  F5.3   d-1    e_f6             ? uncertainty on frequency of
                                            identified signal
-  660-  673  E14.9  ---    a6               ? amplitude of identified signal
-  675-  676  I2     ---    i7               ? index of multiplet this identified
+  670-  683  E14.9  ---    a6               ? amplitude of identified signal
+  685-  686  I2     ---    i7               ? index of multiplet this identified
                                            signal is part of
-  678-  679  I2     ---    n7               ? radial order of identified signal
-  681-  682  I2     ---    l7               ? degree of identified signal
-  684-  685  I2     ---    m7               ? azimuthal order of identified
+  688-  689  I2     ---    n7               ? radial order of identified signal
+  691-  692  I2     ---    l7               ? degree of identified signal
+  694-  695  I2     ---    m7               ? azimuthal order of identified
                                            signal
-  687-  704  F18.16 d-1    f7               ? frequency of identified signal
-  706-  710  F5.3   d-1    e_f7             ? uncertainty on frequency of
+  697-  714  F18.16 d-1    f7               ? frequency of identified signal
+  716-  720  F5.3   d-1    e_f7             ? uncertainty on frequency of
                                            identified signal
-  712-  732  E21.16 ---    a7               ? amplitude of identified signal
-  734-  735  I2     ---    i8               ? index of multiplet this identified
+  722-  742  E21.16 ---    a7               ? amplitude of identified signal
+  744-  745  I2     ---    i8               ? index of multiplet this identified
                                            signal is part of
-  737-  738  I2     ---    n8               ? radial order of identified signal
-  740-  741  I2     ---    l8               ? degree of identified signal
-  743-  744  I2     ---    m8               ? azimuthal order of identified
+  747-  748  I2     ---    n8               ? radial order of identified signal
+  750-  751  I2     ---    l8               ? degree of identified signal
+  753-  754  I2     ---    m8               ? azimuthal order of identified
                                            signal
-  746-  762  F17.15 d-1    f8               ? frequency of identified signal
-  764-  768  F5.3   d-1    e_f8             ? uncertainty on frequency of
+  756-  772  F17.15 d-1    f8               ? frequency of identified signal
+  774-  778  F5.3   d-1    e_f8             ? uncertainty on frequency of
                                            identified signal
-  770-  783  E14.9  ---    a8               ? amplitude of identified signal
-  785-  786  I2     ---    i9               ? index of multiplet this identified
+  780-  793  E14.9  ---    a8               ? amplitude of identified signal
+  795-  796  I2     ---    i9               ? index of multiplet this identified
                                            signal is part of
-  788-  789  I2     ---    n9               ? radial order of identified signal
-  791-  792  I2     ---    l9               ? degree of identified signal
-  794-  795  I2     ---    m9               ? azimuthal order of identified
+  798-  799  I2     ---    n9               ? radial order of identified signal
+  801-  802  I2     ---    l9               ? degree of identified signal
+  804-  805  I2     ---    m9               ? azimuthal order of identified
                                            signal
-  797-  814  F18.16 d-1    f9               ? frequency of identified signal
-  816-  820  F5.3   d-1    e_f9             ? uncertainty on frequency of
+  807-  824  F18.16 d-1    f9               ? frequency of identified signal
+  826-  830  F5.3   d-1    e_f9             ? uncertainty on frequency of
                                            identified signal
-  822-  835  E14.9  ---    a9               ? amplitude of identified signal
-  837-  838  I2     ---    i10              ? index of multiplet this identified
+  832-  845  E14.9  ---    a9               ? amplitude of identified signal
+  847-  848  I2     ---    i10              ? index of multiplet this identified
                                            signal is part of
-  840-  841  I2     ---    n10              ? radial order of identified signal
-  843-  844  I2     ---    l10              ? degree of identified signal
-  846-  847  I2     ---    m10              ? azimuthal order of identified
+  850-  851  I2     ---    n10              ? radial order of identified signal
+  853-  854  I2     ---    l10              ? degree of identified signal
+  856-  857  I2     ---    m10              ? azimuthal order of identified
                                            signal
-  849-  865  F17.15 d-1    f10              ? frequency of identified signal
-  867-  871  F5.3   d-1    e_f10            ? uncertainty on frequency of
+  859-  875  F17.15 d-1    f10              ? frequency of identified signal
+  877-  881  F5.3   d-1    e_f10            ? uncertainty on frequency of
                                            identified signal
-  873-  894  E22.17 ---    a10              ? amplitude of identified signal
-  896-  897  I2     ---    i11              ? index of multiplet this identified
+  883-  904  E22.17 ---    a10              ? amplitude of identified signal
+  906-  907  I2     ---    i11              ? index of multiplet this identified
                                            signal is part of
-  899-  900  I2     ---    n11              ? radial order of identified signal
-  902-  903  I2     ---    l11              ? degree of identified signal
-  905-  906  I2     ---    m11              ? azimuthal order of identified
+  909-  910  I2     ---    n11              ? radial order of identified signal
+  912-  913  I2     ---    l11              ? degree of identified signal
+  915-  916  I2     ---    m11              ? azimuthal order of identified
                                            signal
-  908-  924  F17.15 d-1    f11              ? frequency of identified signal
-  926-  930  F5.3   d-1    e_f11            ? uncertainty on frequency of
+  918-  934  F17.15 d-1    f11              ? frequency of identified signal
+  936-  940  F5.3   d-1    e_f11            ? uncertainty on frequency of
                                            identified signal
-  932-  949  F18.16 ---    a11              ? amplitude of identified signal
-  951-  952  I2     ---    i12              ? index of multiplet this identified
+  942-  959  F18.16 ---    a11              ? amplitude of identified signal
+  961-  962  I2     ---    i12              ? index of multiplet this identified
                                            signal is part of
-  954-  955  I2     ---    n12              ? radial order of identified signal
-  957-  958  I2     ---    l12              ? degree of identified signal
-  960-  961  I2     ---    m12              ? azimuthal order of identified
+  964-  965  I2     ---    n12              ? radial order of identified signal
+  967-  968  I2     ---    l12              ? degree of identified signal
+  970-  971  I2     ---    m12              ? azimuthal order of identified
                                            signal
-  963-  979  F17.15 d-1    f12              ? frequency of identified signal
-  981-  985  F5.3   d-1    e_f12            ? uncertainty on frequency of
+  973-  989  F17.15 d-1    f12              ? frequency of identified signal
+  991-  995  F5.3   d-1    e_f12            ? uncertainty on frequency of
                                            identified signal
-  987- 1004  F18.16 ---    a12              ? amplitude of identified signal
- 1006- 1007  I2     ---    i13              ? index of multiplet this identified
+  997- 1014  F18.16 ---    a12              ? amplitude of identified signal
+ 1016- 1017  I2     ---    i13              ? index of multiplet this identified
                                            signal is part of
- 1009- 1010  I2     ---    n13              ? radial order of identified signal
- 1012- 1013  I2     ---    l13              ? degree of identified signal
- 1015- 1016  I2     ---    m13              ? azimuthal order of identified
+ 1019- 1020  I2     ---    n13              ? radial order of identified signal
+ 1022- 1023  I2     ---    l13              ? degree of identified signal
+ 1025- 1026  I2     ---    m13              ? azimuthal order of identified
                                            signal
- 1018- 1035  F18.16 d-1    f13              ? frequency of identified signal
- 1037- 1041  F5.3   d-1    e_f13            ? uncertainty on frequency of
+ 1028- 1045  F18.16 d-1    f13              ? frequency of identified signal
+ 1047- 1051  F5.3   d-1    e_f13            ? uncertainty on frequency of
                                            identified signal
- 1043- 1055  E13.8  ---    a13              ? amplitude of identified signal
- 1057- 1058  I2     ---    i14              ? index of multiplet this identified
+ 1053- 1065  E13.8  ---    a13              ? amplitude of identified signal
+ 1067- 1068  I2     ---    i14              ? index of multiplet this identified
                                            signal is part of
- 1060- 1061  I2     ---    n14              ? radial order of identified signal
- 1063- 1064  I2     ---    l14              ? degree of identified signal
- 1066- 1067  I2     ---    m14              ? azimuthal order of identified
+ 1070- 1071  I2     ---    n14              ? radial order of identified signal
+ 1073- 1074  I2     ---    l14              ? degree of identified signal
+ 1076- 1077  I2     ---    m14              ? azimuthal order of identified
                                            signal
- 1069- 1076  F8.6   d-1    f14              ? frequency of identified signal
- 1078- 1082  F5.3   d-1    e_f14            ? uncertainty on frequency of
+ 1079- 1086  F8.6   d-1    f14              ? frequency of identified signal
+ 1088- 1092  F5.3   d-1    e_f14            ? uncertainty on frequency of
                                            identified signal
- 1084- 1097  F14.12 ---    a14              ? amplitude of identified signal
- 1099- 1100  I2     ---    i15              ? index of multiplet this identified
+ 1094- 1107  F14.12 ---    a14              ? amplitude of identified signal
+ 1109- 1110  I2     ---    i15              ? index of multiplet this identified
                                            signal is part of
- 1102- 1103  I2     ---    n15              ? radial order of identified signal
- 1105- 1106  I2     ---    l15              ? degree of identified signal
- 1108- 1109  I2     ---    m15              ? azimuthal order of identified
+ 1112- 1113  I2     ---    n15              ? radial order of identified signal
+ 1115- 1116  I2     ---    l15              ? degree of identified signal
+ 1118- 1119  I2     ---    m15              ? azimuthal order of identified
                                            signal
- 1111- 1118  F8.6   d-1    f15              ? frequency of identified signal
- 1120- 1124  F5.3   d-1    e_f15            ? uncertainty on frequency of
+ 1121- 1128  F8.6   d-1    f15              ? frequency of identified signal
+ 1130- 1134  F5.3   d-1    e_f15            ? uncertainty on frequency of
                                            identified signal
- 1126- 1139  F14.12 ---    a15              ? amplitude of identified signal
- 1141- 5380  A4240  d-1    all_f            ? all detected frequencies
- 5382-10396  A5015  ---    all_a            ? all detected amplitudes
+ 1136- 1149  F14.12 ---    a15              ? amplitude of identified signal
+ 1151- 5390  A4240  d-1    all_f            ? all detected frequencies
+ 5392-10406  A5015  ---    all_a            ? all detected amplitudes
 --------------------------------------------------------------------------------
 
-Byte-by-byte Description of file: Models.dat
+Byte-by-byte Description of file: Models1.dat
 --------------------------------------------------------------------------------
  Bytes Format Units  Label     Explanations
 --------------------------------------------------------------------------------
-  1-  9  I9      ---    TIC_ID       ? TESS object identifier
- 11- 23  A13     ---    name         ? common name
- 25- 42  F18.15 solMass M            [8.03/29.86]? initial mass
- 44- 63  F20.18 solMass e_M          [0.05/1.04]? uncertainty on initial mass
- 65- 82  F18.16 cm2.s-1 logD         [1.0/6.0]? log10 of mixing strength at the
-                                   base of the envelope
- 84-101  F18.16 cm2.s-1 e_logD       [0.5/1.51]? uncertainty on log10 of mixing
-                                   strength at the base of the envelope
-103-123  F21.19  ---    fov          [0.0/0.04]? overshoot parameter
-125-145  F21.19  ---    e_fov        [0.0/0.01]? uncertainty on overshoot
-                                   parameter
-147-165  F19.17  ---    Xc           [0.04/0.43]? central hydrogen mass fraction
-167-187  F21.19  ---    e_Xc         [0.0/0.05]? uncertainty on central hydrogen
-                                   mass fraction
-189-208  F20.18  d-1    frot         [0.01/0.6]? rotation frequency measured
-                                   when fitting all observed signals
-210-230  E21.16  d-1    e_frot       [0.0/0.03]? uncertainty on rotation
-                                   frequency measured when fitting all observed
-                                   signals
-232-252  F21.19  ---    frot_rel     [0.0/0.41]? rotation frequency relative to
-                                   the critical rotation frequency measured when
-                                   fitting all observed signals
-254-275  E22.17  ---    e_frot_rel   [0.0/0.01]? uncertainty on rotation
-                                   frequency relative to the critical rotation
-                                   frequency measured when fitting all observed
-                                   signals
-277-294  F18.9   yr     age          [3282211.88/32511686.79]? age since ZAMS
-296-314  F19.11  yr     e_age        [87491.68/1499569.31]? uncertainty on age
-                                   since ZAMS
-316-333  F18.16  K      log_Teff     [4.28/4.57]? log10 of effective temperature
-335-355  F21.19  K      e_log_Teff   [0.0/0.02]? uncertainty of log10 of
-                                   effective temperature
-357-374  F18.16  solLum log_L        [3.66/5.21]? log10 of luminosity
-376-395  F20.18  solLum e_log_L      [0.01/0.04]? uncertainty on log10 of
-                                   luminosity
-397-414  F18.16  cm.s-2 log_g        [3.56/3.95]? log10 of surface gravity
-416-436  F21.19  cm.s-2 e_log_g      [0.0/0.05]? uncertainty on log10 of surface
-                                   gravity
-438-455  F18.16  solRad log_R        [0.69/1.07]? log10 of stellar radius
-457-477  F21.19  solRad e_log_R      [0.0/0.02]? uncertainty of log10 of stellar
-                                   radius
-479-497  F19.16 solMass Mcc          [1.33/12.96]? convective core mass
-499-519  F21.19 solMass e_Mcc        [0.0/0.32]? uncertainty on convective core
-                                   mass
-521-539  F19.17  ---    Mcc_over_M   [0.16/0.44]? convective core mass relative
-                                   to total mass
-541-561  F21.19  ---    e_Mcc_over_M [0.0/0.02]? uncertainty on convective core
-                                   mass relative to total mass
+  1-  9  I9      ---    TIC_ID           ? TESS object identifier
+ 11- 23  A13     ---    name             ? common name
+     25  I1      ---    validation_star  ? whether this is one of the six
+                                       validation stars
+ 27- 48  F22.16  ---    chi2             [0.78/94808.76]? the chi-square cost
+                                       function
+ 50- 71  F22.16  ---    chi2_reduced     [0.78/94808.76]? the reduced chi-square
+                                       cost function
+ 73- 93  E21.16  d-1    max_f_zonal_diff [0.0/0.11]? the absolute value of the
+                                       largest difference between an observed
+                                       and the best model's zonal frequency
+ 95-112  F18.15 solMass M                [8.03/29.86]? initial mass
+114-133  F20.18 solMass e_M              [0.05/1.04]? uncertainty on initial
+                                       mass
+135-152  F18.16 cm2.s-1 logD             [1.0/6.0]? log10 of mixing strength at
+                                       the base of the envelope
+154-171  F18.16 cm2.s-1 e_logD           [0.5/1.51]? uncertainty on log10 of
+                                       mixing strength at the base of the
+                                       envelope
+173-193  F21.19  ---    fov              [0.0/0.04]? overshoot parameter
+195-215  F21.19  ---    e_fov            [0.0/0.01]? uncertainty on overshoot
+                                       parameter
+217-235  F19.17  ---    Xc               [0.04/0.43]? central hydrogen mass
+                                       fraction
+237-257  F21.19  ---    e_Xc             [0.0/0.05]? uncertainty on central
+                                       hydrogen mass fraction
+259-278  F20.18  d-1    frot             [0.01/0.6]? rotation frequency measured
+                                       when fitting all observed signals
+280-300  E21.16  d-1    e_frot           [0.0/0.03]? uncertainty on rotation
+                                       frequency measured when fitting all
+                                       observed signals
+302-322  F21.19  ---    frot_rel         [0.0/0.41]? rotation frequency relative
+                                       to the critical rotation frequency
+                                       measured when fitting all observed
+                                       signals
+324-345  E22.17  ---    e_frot_rel       [0.0/0.01]? uncertainty on rotation
+                                       frequency relative to the critical
+                                       rotation frequency measured when fitting
+                                       all observed signals
+347-364  F18.9   yr     age              [3282211.88/32511686.79]? age since
+                                       ZAMS
+366-384  F19.11  yr     e_age            [87491.68/1499569.31]? uncertainty on
+                                       age since ZAMS
+386-403  F18.16  K      log_Teff         [4.28/4.57]? log10 of effective
+                                       temperature
+405-425  F21.19  K      e_log_Teff       [0.0/0.02]? uncertainty of log10 of
+                                       effective temperature
+427-444  F18.16  solLum log_L            [3.66/5.21]? log10 of luminosity
+446-465  F20.18  solLum e_log_L          [0.01/0.04]? uncertainty on log10 of
+                                       luminosity
+467-484  F18.16  cm.s-2 log_g            [3.56/3.95]? log10 of surface gravity
+486-506  F21.19  cm.s-2 e_log_g          [0.0/0.05]? uncertainty on log10 of
+                                       surface gravity
+508-525  F18.16  solRad log_R            [0.69/1.07]? log10 of stellar radius
+527-547  F21.19  solRad e_log_R          [0.0/0.02]? uncertainty of log10 of
+                                       stellar radius
+549-567  F19.16 solMass Mcc              [1.33/12.96]? convective core mass
+569-589  F21.19 solMass e_Mcc            [0.0/0.32]? uncertainty on convective
+                                       core mass
+591-609  F19.17  ---    Mcc_over_M       [0.16/0.44]? convective core mass
+                                       relative to total mass
+611-631  F21.19  ---    e_Mcc_over_M     [0.0/0.02]? uncertainty on convective
+                                       core mass relative to total mass
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: Models2.dat
+--------------------------------------------------------------------------------
+ Bytes Format Units  Label     Explanations
+--------------------------------------------------------------------------------
+  1-  9  I9      ---    TIC_ID           ? TESS object identifier
+ 11- 23  A13     ---    name             ? common name
+     25  I1      ---    validation_star  ? whether this is one of the six
+                                       validation stars
+ 27- 47  F21.16  ---    chi2             [0.04/9672.75]? the chi-square cost
+                                       function
+ 49- 69  F21.16  ---    chi2_reduced     [0.04/9672.75]? the reduced chi-square
+                                       cost function
+ 71- 90  E20.15  d-1    max_f_zonal_diff [0.0/0.1]? the absolute value of the
+                                       largest difference between an observed
+                                       and the best model's zonal frequency
+ 92-109  F18.15 solMass M                [7.86/27.51]? initial mass
+111-130  F20.18 solMass e_M              [0.05/1.1]? uncertainty on initial mass
+132-149  F18.16 cm2.s-1 logD             [1.0/6.0]? log10 of mixing strength at
+                                       the base of the envelope
+151-168  F18.16 cm2.s-1 e_logD           [0.5/1.51]? uncertainty on log10 of
+                                       mixing strength at the base of the
+                                       envelope
+170-189  F20.18  ---    fov              [0.0/0.04]? overshoot parameter
+191-211  F21.19  ---    e_fov            [0.0/0.02]? uncertainty on overshoot
+                                       parameter
+213-232  F20.18  ---    Xc               [0.04/0.42]? central hydrogen mass
+                                       fraction
+234-254  F21.19  ---    e_Xc             [0.0/0.05]? uncertainty on central
+                                       hydrogen mass fraction
+256-275  F20.18  d-1    frot             [0.01/0.59]? rotation frequency
+                                       measured when fitting all observed
+                                       signals
+277-297  E21.16  d-1    e_frot           [0.0/0.23]? uncertainty on rotation
+                                       frequency measured when fitting all
+                                       observed signals
+299-318  F20.18  ---    frot_rel         [0.0/0.41]? rotation frequency relative
+                                       to the critical rotation frequency
+                                       measured when fitting all observed
+                                       signals
+320-341  E22.17  ---    e_frot_rel       [0.0/0.04]? uncertainty on rotation
+                                       frequency relative to the critical
+                                       rotation frequency measured when fitting
+                                       all observed signals
+343-361  F19.10  yr     age              [3810812.81/33045606.93]? age since
+                                       ZAMS
+363-381  F19.11  yr     e_age            [88669.64/1653686.97]? uncertainty on
+                                       age since ZAMS
+383-400  F18.16  K      log_Teff         [4.27/4.56]? log10 of effective
+                                       temperature
+402-422  F21.19  K      e_log_Teff       [0.0/0.02]? uncertainty of log10 of
+                                       effective temperature
+424-441  F18.16  solLum log_L            [3.66/5.18]? log10 of luminosity
+443-462  F20.18  solLum e_log_L          [0.01/0.04]? uncertainty on log10 of
+                                       luminosity
+464-481  F18.16  cm.s-2 log_g            [3.56/3.95]? log10 of surface gravity
+483-503  F21.19  cm.s-2 e_log_g          [0.0/0.05]? uncertainty on log10 of
+                                       surface gravity
+505-522  F18.16  solRad log_R            [0.69/1.08]? log10 of stellar radius
+524-544  F21.19  solRad e_log_R          [0.0/0.02]? uncertainty of log10 of
+                                       stellar radius
+546-564  F19.16 solMass Mcc              [1.32/12.24]? convective core mass
+566-586  F21.19 solMass e_Mcc            [0.0/0.34]? uncertainty on convective
+                                       core mass
+588-606  F19.17  ---    Mcc_over_M       [0.16/0.45]? convective core mass
+                                       relative to total mass
+608-628  F21.19  ---    e_Mcc_over_M     [0.0/0.03]? uncertainty on convective
+                                       core mass relative to total mass
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: Models3.dat
+--------------------------------------------------------------------------------
+ Bytes Format Units  Label     Explanations
+--------------------------------------------------------------------------------
+  1-  9  I9      ---    TIC_ID           ? TESS object identifier
+ 11- 23  A13     ---    name             ? common name
+     25  I1      ---    validation_star  ? whether this is one of the six
+                                       validation stars
+ 27- 49  F23.16  ---    chi2             [0.78/188935.94]? the chi-square cost
+                                       function
+ 51- 72  F22.16  ---    chi2_reduced     [0.78/94467.97]? the reduced chi-square
+                                       cost function
+ 74- 95  E22.17  d-1    max_f_zonal_diff [0.0/0.18]? the absolute value of the
+                                       largest difference between an observed
+                                       and the best model's zonal frequency
+ 97-114  F18.15 solMass M                [8.03/25.12]? initial mass
+116-135  F20.18 solMass e_M              [0.05/1.04]? uncertainty on initial
+                                       mass
+137-154  F18.16 cm2.s-1 logD             [1.0/6.0]? log10 of mixing strength at
+                                       the base of the envelope
+156-173  F18.16 cm2.s-1 e_logD           [0.5/1.51]? uncertainty on log10 of
+                                       mixing strength at the base of the
+                                       envelope
+175-195  F21.19  ---    fov              [0.0/0.04]? overshoot parameter
+197-217  F21.19  ---    e_fov            [0.0/0.01]? uncertainty on overshoot
+                                       parameter
+219-237  F19.17  ---    Xc               [0.04/0.4]? central hydrogen mass
+                                       fraction
+239-259  F21.19  ---    e_Xc             [0.0/0.02]? uncertainty on central
+                                       hydrogen mass fraction
+261-280  F20.18  d-1    frot             [0.01/0.74]? rotation frequency
+                                       measured when fitting all observed
+                                       signals
+282-302  E21.16  d-1    e_frot           [0.0/0.02]? uncertainty on rotation
+                                       frequency measured when fitting all
+                                       observed signals
+304-324  F21.19  ---    frot_rel         [0.0/0.59]? rotation frequency relative
+                                       to the critical rotation frequency
+                                       measured when fitting all observed
+                                       signals
+326-347  E22.17  ---    e_frot_rel       [0.0/0.01]? uncertainty on rotation
+                                       frequency relative to the critical
+                                       rotation frequency measured when fitting
+                                       all observed signals
+349-366  F18.9   yr     age              [4499226.1/32499990.34]? age since ZAMS
+368-386  F19.11  yr     e_age            [101119.11/1499581.47]? uncertainty on
+                                       age since ZAMS
+388-405  F18.16  K      log_Teff         [4.27/4.54]? log10 of effective
+                                       temperature
+407-427  F21.19  K      e_log_Teff       [0.0/0.01]? uncertainty of log10 of
+                                       effective temperature
+429-446  F18.16  solLum log_L            [3.66/5.08]? log10 of luminosity
+448-467  F20.18  solLum e_log_L          [0.01/0.04]? uncertainty on log10 of
+                                       luminosity
+469-486  F18.16  cm.s-2 log_g            [3.54/3.95]? log10 of surface gravity
+488-508  F21.19  cm.s-2 e_log_g          [0.0/0.02]? uncertainty on log10 of
+                                       surface gravity
+510-527  F18.16  solRad log_R            [0.69/1.03]? log10 of stellar radius
+529-549  F21.19  solRad e_log_R          [0.0/0.02]? uncertainty of log10 of
+                                       stellar radius
+551-568  F18.16 solMass Mcc              [1.32/9.73]? convective core mass
+570-590  F21.19 solMass e_Mcc            [0.0/0.42]? uncertainty on convective
+                                       core mass
+592-610  F19.17  ---    Mcc_over_M       [0.16/0.39]? convective core mass
+                                       relative to total mass
+612-632  F21.19  ---    e_Mcc_over_M     [0.0/0.02]? uncertainty on convective
+                                       core mass relative to total mass
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: Models4.dat
+--------------------------------------------------------------------------------
+ Bytes Format Units  Label     Explanations
+--------------------------------------------------------------------------------
+  1-  9  I9      ---    TIC_ID           ? TESS object identifier
+ 11- 23  A13     ---    name             ? common name
+     25  I1      ---    validation_star  ? whether this is one of the six
+                                       validation stars
+ 27- 48  F22.16  ---    chi2             [0.31/30041.15]? the chi-square cost
+                                       function
+ 50- 71  F22.16  ---    chi2_reduced     [0.31/30041.15]? the reduced chi-square
+                                       cost function
+ 73- 94  E22.17  d-1    max_f_zonal_diff [0.0/0.18]? the absolute value of the
+                                       largest difference between an observed
+                                       and the best model's zonal frequency
+ 96-113  F18.15 solMass M                [8.03/25.12]? initial mass
+115-134  F20.18 solMass e_M              [0.05/1.34]? uncertainty on initial
+                                       mass
+136-153  F18.16 cm2.s-1 logD             [1.0/6.0]? log10 of mixing strength at
+                                       the base of the envelope
+155-172  F18.16 cm2.s-1 e_logD           [0.5/1.51]? uncertainty on log10 of
+                                       mixing strength at the base of the
+                                       envelope
+174-193  F20.18  ---    fov              [0.0/0.04]? overshoot parameter
+195-215  F21.19  ---    e_fov            [0.0/0.02]? uncertainty on overshoot
+                                       parameter
+217-235  F19.17  ---    Xc               [0.04/0.4]? central hydrogen mass
+                                       fraction
+237-257  F21.19  ---    e_Xc             [0.0/0.03]? uncertainty on central
+                                       hydrogen mass fraction
+259-278  F20.18  d-1    frot             [0.01/0.74]? rotation frequency
+                                       measured when fitting all observed
+                                       signals
+280-300  E21.16  d-1    e_frot           [0.0/0.02]? uncertainty on rotation
+                                       frequency measured when fitting all
+                                       observed signals
+302-321  F20.18  ---    frot_rel         [0.0/0.59]? rotation frequency relative
+                                       to the critical rotation frequency
+                                       measured when fitting all observed
+                                       signals
+323-344  E22.17  ---    e_frot_rel       [0.0/0.01]? uncertainty on rotation
+                                       frequency relative to the critical
+                                       rotation frequency measured when fitting
+                                       all observed signals
+346-363  F18.9   yr     age              [4499226.1/32982479.01]? age since ZAMS
+365-383  F19.11  yr     e_age            [101116.03/1500241.88]? uncertainty on
+                                       age since ZAMS
+385-402  F18.16  K      log_Teff         [4.27/4.54]? log10 of effective
+                                       temperature
+404-424  F21.19  K      e_log_Teff       [0.0/0.01]? uncertainty of log10 of
+                                       effective temperature
+426-443  F18.16  solLum log_L            [3.66/5.08]? log10 of luminosity
+445-464  F20.18  solLum e_log_L          [0.01/0.04]? uncertainty on log10 of
+                                       luminosity
+466-483  F18.16  cm.s-2 log_g            [3.54/3.95]? log10 of surface gravity
+485-505  F21.19  cm.s-2 e_log_g          [0.0/0.03]? uncertainty on log10 of
+                                       surface gravity
+507-524  F18.16  solRad log_R            [0.69/1.03]? log10 of stellar radius
+526-546  F21.19  solRad e_log_R          [0.0/0.01]? uncertainty of log10 of
+                                       stellar radius
+548-565  F18.16 solMass Mcc              [1.32/9.73]? convective core mass
+567-587  F21.19 solMass e_Mcc            [0.0/0.42]? uncertainty on convective
+                                       core mass
+589-607  F19.17  ---    Mcc_over_M       [0.16/0.39]? convective core mass
+                                       relative to total mass
+609-629  F21.19  ---    e_Mcc_over_M     [0.0/0.02]? uncertainty on convective
+                                       core mass relative to total mass
 --------------------------------------------------------------------------------
 
 Byte-by-byte Description of file: RotSplit.dat
