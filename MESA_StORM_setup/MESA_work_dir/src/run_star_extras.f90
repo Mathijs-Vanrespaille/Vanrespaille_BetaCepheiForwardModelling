@@ -104,7 +104,7 @@
 
         ! Read input from bash script
         print *
-        print "('Insert output_directory, M_ini, Z_ini, logD_mix, a_ov, f_ov')"
+        print "('Insert output_directory, Z_ini, M_ini, logD_mix, a_ov, f_ov')"
         read(*,*) output_dir, Z_ini, M_ini, logD_mix, a_ov, f_ov
         write(*,*)'Zini = ',Z_ini
         write(*,*)'Mini = ',M_ini
@@ -135,7 +135,8 @@
         Xc_save_log_iterator = s% x_ctrl(6) ! Determines the amount of models (in steps of 0.1) one wants to save on hook (1.0 --> ten models, 1.5 --> 15 models, 0.5 --> 5 models etc.)
         Xc_precision = 1d-4 ! Precision to which we save at a certain Xc
 
-        if (s% job% create_pre_main_sequence_model) then
+        if (s% job% create_pre_main_sequence_model .and. .not. s% stop_near_zams) then
+          ! Only computing the pre-main sequence model
           s% job% save_model_when_terminate = .true.
           ! s% scale_max_correction = 0.1       ! to help pre-MS convergence
           ! Set initial composition and mass
@@ -144,7 +145,6 @@
           ! Set mixing parameters
           write(*,*)'logD is started as:', logD_mix
           call set_logD_mix(id, 1d0, ierr)            ! Set output directory and the name for the history file
-
           if (M_ini<10) then
               write (hist_name, '(A,F5.3,A,F4.2,A)') 'Z', Z_ini, '_M', M_ini, '_preMS'
               write (ZAMS_file_name, '(A,F5.3,A,F4.2,A)') 'Z', Z_ini, '_M', M_ini, '_ZAMS.mod'
@@ -152,22 +152,32 @@
               write (hist_name, '(A,F5.3,A,F5.2,A)') 'Z', Z_ini, '_M', M_ini, '_preMS'
               write (ZAMS_file_name, '(A,F5.3,A,F5.2,A)') 'Z', Z_ini, '_M', M_ini, '_ZAMS.mod'
           endif
-          output_dir = 'preMS/' ! CAREFUL: I overwrite the output_dir provided in the
+          output_dir = 'preMS/' ! CAREFUL: I overwrite the output_dir provided in the command line
           s% job% save_model_filename = trim(output_dir) // trim(ZAMS_file_name)
           s% log_directory= trim(output_dir)
         else
+          if (s% job% create_pre_main_sequence_model) then
+            ! Computing both the pre-main sequence and main sequence model
+            call set_XYZ_ini_preMS(id, X_ini, Y_ini, Z_ini, ierr)
+            call set_initial_mass(id, M_ini, ierr)
+            s% job% load_saved_model = .false.
+          else
+            ! Computing only the main sequence model
+            preMS_dir = 'preMS/'
+            s% photo_directory=trim(preMS_dir)
+            s% job% load_saved_model = .true.
+            s% job% load_model_filename = trim(preMS_dir) // '/' // trim(ZAMS_file_name)
+          endif
           s% kap_rq% Zbase = Z_ini
           ! Extra meshing around convective core boundary
           s% job% save_model_when_terminate = .true.
           if (ierr /= 0) return
           s% other_D_mix => IGW_D_mix_rho
+          write(*,*)'logD is started as:', logD_mix
           ! s% job% set_initial_dt = .true.
           ! s% job% years_for_initial_dt = 1d3
-          s% job% load_saved_model = .true.
           ! Set output directory and the name for the history file
-          preMS_dir = 'preMS/'
           s% log_directory= trim(output_dir)
-          s% photo_directory=trim(preMS_dir)
           if (M_ini<10) then
             write (hist_name, '(A,F5.3,A,F4.2,A,F3.1,A,F5.3)') 'Z', Z_ini, '_M', M_ini, '_logD', logD_mix, '_fov', f_ov
             write (ZAMS_file_name, '(A,F5.3,A,F4.2,A)') 'Z', Z_ini, '_M', M_ini,'_ZAMS.mod'
@@ -175,7 +185,6 @@
             write (hist_name, '(A,F5.3,A,F5.2,A,F3.1,A,F5.3)') 'Z', Z_ini, '_M', M_ini, '_logD', logD_mix, '_fov', f_ov
             write (ZAMS_file_name, '(A,F5.3,A,F5.2,A)') 'Z', Z_ini, '_M', M_ini, '_ZAMS.mod'
           endif
-          s% job% load_model_filename = trim(preMS_dir) // '/' // trim(ZAMS_file_name)
           s% job% save_model_filename = trim(output_dir) // '/' // trim(hist_name) // '_TAMS.mod'
           ! Set mixing parameters
           write(*,*)'logD is started as:', logD_mix
@@ -193,6 +202,7 @@
           do while(X_ini > Xc_save + 2d0*s% x_ctrl(3))
             Xc_save = Xc_save + s% x_ctrl(3)
           end do
+          write(*,*)'After adjustment for provided Z, Xc_save is: ', Xc_save
         endif
 
         ! Naming and specifying history output. Final model is named in if-else above
@@ -507,6 +517,7 @@
 !********************************************************************************************
 ! Set initial model settings
 !********************************************************************************************
+
 subroutine extras_startup(id, restart, ierr)
    integer, intent(in) :: id
    logical, intent(in) :: restart

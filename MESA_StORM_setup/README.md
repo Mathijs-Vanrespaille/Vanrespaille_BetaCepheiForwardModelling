@@ -1,3 +1,5 @@
+This Readme teaches the reader how to use the MESA work directory provided in this repository. For the scientific description of these models, we refer the user to Section 3 of Vanrespaille et al. (in prep.). The inlists and run_star_extras in this repository are adapted from those of Burssens et al. (2023), who in turn adapted the setup of Michielsen et al. (2019, 2021, 2023).
+
 ## How to run the MESA work directory
 
 The MESA work directory provided in this repository is run in an unusual manner. The output directory, initial metallicity, initial mass, core overshooting and envelope mixing are not set in the inlist, but rather from the terminal. To set up and run your own model, take the following steps:
