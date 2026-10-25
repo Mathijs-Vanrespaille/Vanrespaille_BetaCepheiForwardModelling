@@ -26,25 +26,27 @@ Abstract:
     momentum transport mechanisms. To that end, we seek to place constraints on
     their rotation profiles.
 
-    Methods. We searched for rotational splitting of non-radial modes in a large
-    {beta} Cep sample with identified mode degrees. These were subjected to a
-    novel forward modelling approach involving a 6-dimensional parameter space,
-    which consistently accounts for second-order rotation effects using the
-    state-of-the-art StORM oscillation code.
+    Methods. We searched for the rotational splittings of non-radial modes in a
+    large {beta} Cep sample with identified mode degrees. These were subjected
+    to a novel forward modelling approach involving a 6-dimensional parameter
+    space, which consistently accounts for second-order rotation effects using
+    the state-of-the-art StORM oscillation code.
 
     Results. We successfully modelled 36 {beta} Cep stars and constrained
     crucial parameters such as their initial mass, internal rotation frequency,
     convective core mass, and age. Like in intermediate-mass stars, the internal
     rotation rate globally decreases in {beta} Cep stars as they evolve along
     the main sequence. Radial differential rotation is constrained in 17 {beta}
-    Cep stars. We detect deviations from quasi-rigid rotation in 13 stars. Our
-    constraints on eight of these 13 stars indicate the rotation rate decreases
-    with radius while it increases in three other stars, and two display
-    non-monotonic rotation profiles.
+    Cep stars. We detect statistically significant deviations from quasi-rigid
+    rotation in 13 stars. Our constraints on eight of these 13 stars indicate
+    the rotation rate decreases with radius between the probed layers while it
+    increases in three other stars, and two stars with rotation constraints at
+    three or more points display non-monotonic rotation profiles.
 
     Conclusions. We affirm that radial differential rotation is common in {beta}
-    Cep stars. Moreover, our constrained rotation profiles suggest that the
-    typical {beta} Cep rotation profile may be non-monotonic.
+    Cep stars. Moreover, our constraints on the internal rotation are compatible
+    with non-monotonic rotation profiles obtained from hydrodynamical
+    simulations and rotation inversions.
 
 Description:
     ObsInput.dat: Observational properties of beta Cephei stars observed with
@@ -94,8 +96,8 @@ Description:
     DiffRot.dat: The measurements of internal and surface rotation used to
     study differential rotation in Section 7 of the accompanying paper. It
     includes the Gaia surface rotation frequencies, if available, and the
-    optimal rotation associated with each rotationally split multiplet
-    and the relative radius where each multiplet is most sensitive.
+    optimal rotation associated with each rotationally split multiplet and some
+    descriptors of the rotation kernel of each multiplet.
 
 File Summary:
 --------------------------------------------------------------------------------
@@ -331,78 +333,78 @@ Byte-by-byte Description of file: Models1.dat
   1-  9  I9        ---    TIC_ID           ? TESS object identifier
  11- 23  A13       ---    name             ? common name
      25  I1        ---    validation_star  ? whether this is one of the six
-                                     validation stars
+                                       validation stars
  27- 48  F22.16    ---    chi2             [0.01/41956.99]? the reduced chi-
-                                     square cost function
+                                       square cost function
  50- 71  F22.20    d-1    max_f_zonal_diff [0.0/0.12]? the absolute value of the
-                                     largest difference between an observed
-                                     and the best model's zonal frequency
- 73- 90  F18.15   solMass M                [7.74/29.62]? current mass
- 92-110  F19.17   solMass e_M              [0.13/3.8]? uncertainty on current
-                                     mass
-112-129  F18.16   cm2.s-1 logD             [1.2/6.01]? log10 of mixing strength
-                                     at the base of the envelope
-131-149  F19.16   cm2.s-1 e_logD           [0.5/19.39]? uncertainty on log10 of
-                                     mixing strength at the base of the
-                                     envelope
-151-171  F21.19    ---    fov              [0.0/0.04]? overshoot parameter
-173-192  F20.18    ---    e_fov            [0.0/0.12]? uncertainty on overshoot
-                                     parameter
-194-213  F20.18    ---    Xc               [0.04/0.44]? central hydrogen mass
-                                     fraction
-215-235  F21.19    ---    e_Xc             [0.0/0.12]? uncertainty on central
-                                     hydrogen mass fraction
-237-255  F19.17    ---    X'c              [0.06/0.64]? normalised central
-                                     hydrogen mass fraction
-257-276  F20.18    ---    e_X'c            [0.0/0.16]? uncertainty on normalised
-                                     central hydrogen mass fraction
-278-297  F20.18    d-1    frot             [0.01/0.59]? rotation frequency
-                                     measured when fitting all observed
-                                     signals
-299-320  E22.17    d-1    e_frot           [0.0/0.31]? uncertainty on rotation
-                                     frequency measured when fitting all
-                                     observed signals
-322-344  E23.17    d-1    b_frot           [-0.07/0.11]? bias on rotation
-                                     frequency measured when fitting all
-                                     observed signals
-346-365  F20.18    ---    frot_rel         [0.0/0.41]? rotation frequency
-                                     relative to the critical rotation
-                                     frequency measured when fitting all
-                                     observed signals
-367-388  E22.17    ---    e_frot_rel       [0.0/0.05]? uncertainty on rotation
-                                     frequency relative to the critical
-                                     rotation frequency measured when fitting
-                                     all observed signals
-390-391  F2.0      ---    b_frot_rel       ? bias on rotation frequency relative
-                                     to the critical rotation frequency
-                                     measured when fitting all observed
-                                     signals
-393-412  F20.16    km.s-1 vrot             [3.73/299.38]? surface rotation speed
-414-435  F22.18    km.s-1 e_vrot           [0.01/167.72]? uncertainty on surface
-                                     rotation speed
-437-455  F19.16 1000000yr age              [2.8/35.54]? age since ZAMS
-457-476  F20.17 1000000yr e_age            [0.12/10.33]? uncertainty on age
-                                     since ZAMS
-478-495  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
-                                     temperature
-497-517  F21.19    K      e_log_Teff       [0.0/0.06]? uncertainty of log10 of
-                                     effective temperature
-519-536  F18.16    solLum log_L            [3.68/5.2]? log10 of luminosity
-538-557  F20.18    solLum e_log_L          [0.01/0.26]? uncertainty on log10 of
-                                     luminosity
-559-576  F18.16    cm.s-2 log_g            [3.57/3.95]? log10 of surface gravity
-578-598  F21.19    cm.s-2 e_log_g          [0.0/0.09]? uncertainty on log10 of
-                                     surface gravity
-600-617  F18.16    solRad log_R            [0.69/1.07]? log10 of stellar radius
-619-639  F21.19    solRad e_log_R          [0.0/0.04]? uncertainty of log10 of
-                                     stellar radius
-641-659  F19.16   solMass Mcc              [1.33/13.37]? convective core mass
-661-680  F20.18   solMass e_Mcc            [0.01/1.83]? uncertainty on
-                                     convective core mass
-682-700  F19.17    ---    Mcc_over_M       [0.16/0.46]? convective core mass
-                                     relative to total mass
-702-722  F21.19    ---    e_Mcc_over_M     [0.0/0.16]? uncertainty on convective
-                                     core mass relative to total mass
+                                       largest difference between an observed
+                                       and the best model's zonal frequency
+ 73- 91  F19.16   solMass M                [7.74/29.62]? current mass
+ 93-111  F19.17   solMass e_M              [0.13/3.77]? uncertainty on current
+                                       mass
+113-130  F18.16   cm2.s-1 logD             [1.2/6.0]? log10 of mixing strength
+                                       at the base of the envelope
+132-150  F19.16   cm2.s-1 e_logD           [0.5/19.39]? uncertainty on log10 of
+                                       mixing strength at the base of the
+                                       envelope
+152-172  F21.19    ---    fov              [0.0/0.04]? overshoot parameter
+174-193  F20.18    ---    e_fov            [0.0/0.12]? uncertainty on overshoot
+                                       parameter
+195-214  F20.18    ---    Xc               [0.04/0.44]? central hydrogen mass
+                                       fraction
+216-236  F21.19    ---    e_Xc             [0.0/0.1]? uncertainty on central
+                                       hydrogen mass fraction
+238-256  F19.17    ---    X'c              [0.06/0.64]? normalised central
+                                       hydrogen mass fraction
+258-278  F21.19    ---    e_X'c            [0.0/0.14]? uncertainty on normalised
+                                       central hydrogen mass fraction
+280-299  F20.18    d-1    frot             [0.01/0.59]? rotation frequency
+                                       measured when fitting all observed
+                                       signals
+301-321  E21.16    d-1    e_frot           [0.0/0.11]? uncertainty on rotation
+                                       frequency measured when fitting all
+                                       observed signals
+323-345  E23.17    d-1    b_frot           [-0.07/0.11]? bias on rotation
+                                       frequency measured when fitting all
+                                       observed signals
+347-366  F20.18    ---    frot_rel         [0.0/0.41]? rotation frequency
+                                       relative to the critical rotation
+                                       frequency measured when fitting all
+                                       observed signals
+368-389  E22.17    ---    e_frot_rel       [0.0/0.02]? uncertainty on rotation
+                                       frequency relative to the critical
+                                       rotation frequency measured when fitting
+                                       all observed signals
+391-392  F2.0      ---    b_frot_rel       ? bias on rotation frequency relative
+                                       to the critical rotation frequency
+                                       measured when fitting all observed
+                                       signals
+394-413  F20.16    km.s-1 vrot             [3.73/299.38]? surface rotation speed
+415-435  F21.18    km.s-1 e_vrot           [0.01/75.57]? uncertainty on surface
+                                       rotation speed
+437-454  F18.15 1000000yr age              [2.8/35.54]? age since ZAMS
+456-475  F20.17 1000000yr e_age            [0.12/10.18]? uncertainty on age
+                                       since ZAMS
+477-494  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
+                                       temperature
+496-516  F21.19    K      e_log_Teff       [0.0/0.06]? uncertainty of log10 of
+                                       effective temperature
+518-535  F18.16    solLum log_L            [3.68/5.2]? log10 of luminosity
+537-556  F20.18    solLum e_log_L          [0.01/0.29]? uncertainty on log10 of
+                                       luminosity
+558-575  F18.16    cm.s-2 log_g            [3.57/3.95]? log10 of surface gravity
+577-597  F21.19    cm.s-2 e_log_g          [0.0/0.07]? uncertainty on log10 of
+                                       surface gravity
+599-616  F18.16    solRad log_R            [0.69/1.07]? log10 of stellar radius
+618-638  F21.19    solRad e_log_R          [0.0/0.04]? uncertainty of log10 of
+                                       stellar radius
+640-658  F19.16   solMass Mcc              [1.33/13.37]? convective core mass
+660-679  F20.18   solMass e_Mcc            [0.01/1.8]? uncertainty on convective
+                                       core mass
+681-699  F19.17    ---    Mcc_over_M       [0.16/0.46]? convective core mass
+                                       relative to total mass
+701-721  F21.19    ---    e_Mcc_over_M     [0.0/0.16]? uncertainty on convective
+                                       core mass relative to total mass
 --------------------------------------------------------------------------------
 
 Byte-by-byte Description of file: Models2.dat
@@ -412,78 +414,78 @@ Byte-by-byte Description of file: Models2.dat
   1-  9  I9        ---    TIC_ID           ? TESS object identifier
  11- 23  A13       ---    name             ? common name
      25  I1        ---    validation_star  ? whether this is one of the six
-                                     validation stars
+                                       validation stars
  27- 47  F21.16    ---    chi2             [0.0/4631.44]? the reduced chi-square
-                                     cost function
+                                       cost function
  49- 69  E21.16    d-1    max_f_zonal_diff [0.0/0.1]? the absolute value of the
-                                     largest difference between an observed
-                                     and the best model's zonal frequency
- 71- 88  F18.15   solMass M                [7.85/27.99]? current mass
- 90-108  F19.17   solMass e_M              [0.13/1.06]? uncertainty on current
-                                     mass
+                                       largest difference between an observed
+                                       and the best model's zonal frequency
+ 71- 88  F18.15   solMass M                [7.85/28.07]? current mass
+ 90-108  F19.17   solMass e_M              [0.13/1.02]? uncertainty on current
+                                       mass
 110-127  F18.16   cm2.s-1 logD             [1.2/6.01]? log10 of mixing strength
-                                     at the base of the envelope
+                                       at the base of the envelope
 129-146  F18.16   cm2.s-1 e_logD           [0.5/1.46]? uncertainty on log10 of
-                                     mixing strength at the base of the
-                                     envelope
+                                       mixing strength at the base of the
+                                       envelope
 148-167  F20.18    ---    fov              [0.0/0.04]? overshoot parameter
 169-189  F21.19    ---    e_fov            [0.0/0.01]? uncertainty on overshoot
-                                     parameter
+                                       parameter
 191-209  F19.17    ---    Xc               [0.04/0.43]? central hydrogen mass
-                                     fraction
+                                       fraction
 211-231  F21.19    ---    e_Xc             [0.0/0.04]? uncertainty on central
-                                     hydrogen mass fraction
+                                       hydrogen mass fraction
 233-251  F19.17    ---    X'c              [0.05/0.6]? normalised central
-                                     hydrogen mass fraction
+                                       hydrogen mass fraction
 253-273  F21.19    ---    e_X'c            [0.0/0.05]? uncertainty on normalised
-                                     central hydrogen mass fraction
+                                       central hydrogen mass fraction
 275-294  F20.18    d-1    frot             [0.01/0.59]? rotation frequency
-                                     measured when fitting all observed
-                                     signals
-296-316  E21.16    d-1    e_frot           [0.0/0.08]? uncertainty on rotation
-                                     frequency measured when fitting all
-                                     observed signals
+                                       measured when fitting all observed
+                                       signals
+296-316  E21.16    d-1    e_frot           [0.0/0.07]? uncertainty on rotation
+                                       frequency measured when fitting all
+                                       observed signals
 318-340  F23.20    d-1    b_frot           [-0.61/0.14]? bias on rotation
-                                     frequency measured when fitting all
-                                     observed signals
+                                       frequency measured when fitting all
+                                       observed signals
 342-361  F20.18    ---    frot_rel         [0.0/0.4]? rotation frequency
-                                     relative to the critical rotation
-                                     frequency measured when fitting all
-                                     observed signals
+                                       relative to the critical rotation
+                                       frequency measured when fitting all
+                                       observed signals
 363-384  E22.17    ---    e_frot_rel       [0.0/0.01]? uncertainty on rotation
-                                     frequency relative to the critical
-                                     rotation frequency measured when fitting
-                                     all observed signals
+                                       frequency relative to the critical
+                                       rotation frequency measured when fitting
+                                       all observed signals
 386-387  F2.0      ---    b_frot_rel       ? bias on rotation frequency relative
-                                     to the critical rotation frequency
-                                     measured when fitting all observed
-                                     signals
-389-408  F20.16    km.s-1 vrot             [3.73/293.8]? surface rotation speed
-410-430  F21.18    km.s-1 e_vrot           [0.01/36.5]? uncertainty on surface
-                                     rotation speed
-432-450  F19.16 1000000yr age              [3.62/31.36]? age since ZAMS
-452-470  F19.17 1000000yr e_age            [0.22/3.08]? uncertainty on age since
-                                     ZAMS
-472-489  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
-                                     temperature
-491-511  F21.19    K      e_log_Teff       [0.0/0.02]? uncertainty of log10 of
-                                     effective temperature
-513-530  F18.16    solLum log_L            [3.67/5.17]? log10 of luminosity
-532-552  F21.19    solLum e_log_L          [0.0/0.08]? uncertainty on log10 of
-                                     luminosity
+                                       to the critical rotation frequency
+                                       measured when fitting all observed
+                                       signals
+389-408  F20.16    km.s-1 vrot             [3.73/294.09]? surface rotation speed
+410-430  F21.18    km.s-1 e_vrot           [0.01/33.19]? uncertainty on surface
+                                       rotation speed
+432-450  F19.16 1000000yr age              [3.6/31.33]? age since ZAMS
+452-471  F20.18 1000000yr e_age            [0.01/3.15]? uncertainty on age since
+                                       ZAMS
+473-490  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
+                                       temperature
+492-512  F21.19    K      e_log_Teff       [0.0/0.02]? uncertainty of log10 of
+                                       effective temperature
+514-531  F18.16    solLum log_L            [3.67/5.18]? log10 of luminosity
+533-552  F20.18    solLum e_log_L          [0.0/0.08]? uncertainty on log10 of
+                                       luminosity
 554-571  F18.16    cm.s-2 log_g            [3.57/3.95]? log10 of surface gravity
 573-593  F21.19    cm.s-2 e_log_g          [0.0/0.02]? uncertainty on log10 of
-                                     surface gravity
+                                       surface gravity
 595-612  F18.16    solRad log_R            [0.69/1.07]? log10 of stellar radius
 614-634  F21.19    solRad e_log_R          [0.0/0.01]? uncertainty of log10 of
-                                     stellar radius
-636-654  F19.16   solMass Mcc              [1.32/12.75]? convective core mass
-656-676  F21.19   solMass e_Mcc            [0.0/0.77]? uncertainty on convective
-                                     core mass
+                                       stellar radius
+636-654  F19.16   solMass Mcc              [1.32/12.81]? convective core mass
+656-676  F21.19   solMass e_Mcc            [0.0/0.75]? uncertainty on convective
+                                       core mass
 678-696  F19.17    ---    Mcc_over_M       [0.16/0.46]? convective core mass
-                                     relative to total mass
+                                       relative to total mass
 698-718  F21.19    ---    e_Mcc_over_M     [0.0/0.02]? uncertainty on convective
-                                     core mass relative to total mass
+                                       core mass relative to total mass
 --------------------------------------------------------------------------------
 
 Byte-by-byte Description of file: Models3.dat
@@ -493,77 +495,77 @@ Byte-by-byte Description of file: Models3.dat
   1-  9  I9        ---    TIC_ID           ? TESS object identifier
  11- 23  A13       ---    name             ? common name
      25  I1        ---    validation_star  ? whether this is one of the six
-                                     validation stars
+                                       validation stars
  27- 48  F22.16    ---    chi2             [0.01/89151.27]? the reduced chi-
-                                     square cost function
+                                       square cost function
  50- 71  E22.17    d-1    max_f_zonal_diff [0.0/0.14]? the absolute value of the
-                                     largest difference between an observed
-                                     and the best model's zonal frequency
+                                       largest difference between an observed
+                                       and the best model's zonal frequency
  73- 90  F18.15   solMass M                [7.74/28.63]? current mass
- 92-111  F20.17   solMass e_M              [0.13/11.19]? uncertainty on current
-                                     mass
-113-130  F18.16   cm2.s-1 logD             [1.04/6.01]? log10 of mixing strength
-                                     at the base of the envelope
-132-150  F19.16   cm2.s-1 e_logD           [0.5/22.38]? uncertainty on log10 of
-                                     mixing strength at the base of the
-                                     envelope
-152-172  F21.19    ---    fov              [0.0/0.04]? overshoot parameter
-174-194  F21.19    ---    e_fov            [0.0/0.16]? uncertainty on overshoot
-                                     parameter
-196-214  F19.17    ---    Xc               [0.03/0.4]? central hydrogen mass
-                                     fraction
-216-236  F21.19    ---    e_Xc             [0.0/0.58]? uncertainty on central
-                                     hydrogen mass fraction
-238-256  F19.17    ---    X'c              [0.04/0.56]? normalised central
-                                     hydrogen mass fraction
-258-278  F21.19    ---    e_X'c            [0.0/0.86]? uncertainty on normalised
-                                     central hydrogen mass fraction
-280-299  F20.18    d-1    frot             [0.01/0.74]? rotation frequency
-                                     measured when fitting all observed
-                                     signals
-301-322  E22.17    d-1    e_frot           [0.0/0.24]? uncertainty on rotation
-                                     frequency measured when fitting all
-                                     observed signals
-324-326  F3.1      d-1    b_frot           ? bias on rotation frequency measured
-                                     when fitting all observed signals
-328-347  F20.18    ---    frot_rel         [0.0/0.59]? rotation frequency
-                                     relative to the critical rotation
-                                     frequency measured when fitting all
-                                     observed signals
-349-370  E22.17    ---    e_frot_rel       [0.0/0.03]? uncertainty on rotation
-                                     frequency relative to the critical
-                                     rotation frequency measured when fitting
-                                     all observed signals
-372-374  F3.1      ---    b_frot_rel       ? bias on rotation frequency relative
-                                     to the critical rotation frequency
-                                     measured when fitting all observed
-                                     signals
-376-395  F20.16    km.s-1 vrot             [3.73/351.71]? surface rotation speed
-397-416  F20.17    km.s-1 e_vrot           [0.01/85.44]? uncertainty on surface
-                                     rotation speed
-418-436  F19.16 1000000yr age              [3.98/35.79]? age since ZAMS
-438-457  F20.17 1000000yr e_age            [0.09/11.74]? uncertainty on age
-                                     since ZAMS
-459-476  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
-                                     temperature
-478-498  F21.19    K      e_log_Teff       [0.0/0.17]? uncertainty of log10 of
-                                     effective temperature
-500-517  F18.16    solLum log_L            [3.68/5.21]? log10 of luminosity
-519-538  F20.18    solLum e_log_L          [0.0/0.82]? uncertainty on log10 of
-                                     luminosity
-540-557  F18.16    cm.s-2 log_g            [3.56/3.95]? log10 of surface gravity
-559-579  F21.19    cm.s-2 e_log_g          [0.0/0.19]? uncertainty on log10 of
-                                     surface gravity
-581-598  F18.16    solRad log_R            [0.69/1.03]? log10 of stellar radius
-600-620  F21.19    solRad e_log_R          [0.0/0.09]? uncertainty of log10 of
-                                     stellar radius
-622-640  F19.16   solMass Mcc              [1.32/12.36]? convective core mass
-642-662  F21.18   solMass e_Mcc            [0.01/10.03]? uncertainty on
-                                     convective core mass
-664-682  F19.17    ---    Mcc_over_M       [0.16/0.44]? convective core mass
-                                     relative to total mass
-684-704  F21.19    ---    e_Mcc_over_M     [0.0/0.49]? uncertainty on convective
-                                     core mass relative to total mass
+ 92-111  F20.17   solMass e_M              [0.13/11.07]? uncertainty on current
+                                       mass
+113-130  F18.16   cm2.s-1 logD             [1.04/6.0]? log10 of mixing strength
+                                       at the base of the envelope
+132-150  F19.16   cm2.s-1 e_logD           [0.5/22.48]? uncertainty on log10 of
+                                       mixing strength at the base of the
+                                       envelope
+152-171  F20.18    ---    fov              [0.0/0.04]? overshoot parameter
+173-193  F21.19    ---    e_fov            [0.0/0.16]? uncertainty on overshoot
+                                       parameter
+195-213  F19.17    ---    Xc               [0.03/0.4]? central hydrogen mass
+                                       fraction
+215-235  F21.19    ---    e_Xc             [0.0/0.58]? uncertainty on central
+                                       hydrogen mass fraction
+237-255  F19.17    ---    X'c              [0.04/0.56]? normalised central
+                                       hydrogen mass fraction
+257-276  F20.18    ---    e_X'c            [0.0/0.86]? uncertainty on normalised
+                                       central hydrogen mass fraction
+278-297  F20.18    d-1    frot             [0.01/0.74]? rotation frequency
+                                       measured when fitting all observed
+                                       signals
+299-320  E22.17    d-1    e_frot           [0.0/0.24]? uncertainty on rotation
+                                       frequency measured when fitting all
+                                       observed signals
+322-324  F3.1      d-1    b_frot           ? bias on rotation frequency measured
+                                       when fitting all observed signals
+326-345  F20.18    ---    frot_rel         [0.0/0.59]? rotation frequency
+                                       relative to the critical rotation
+                                       frequency measured when fitting all
+                                       observed signals
+347-368  E22.17    ---    e_frot_rel       [0.0/0.03]? uncertainty on rotation
+                                       frequency relative to the critical
+                                       rotation frequency measured when fitting
+                                       all observed signals
+370-372  F3.1      ---    b_frot_rel       ? bias on rotation frequency relative
+                                       to the critical rotation frequency
+                                       measured when fitting all observed
+                                       signals
+374-393  F20.16    km.s-1 vrot             [3.73/351.71]? surface rotation speed
+395-415  F21.18    km.s-1 e_vrot           [0.01/85.95]? uncertainty on surface
+                                       rotation speed
+417-434  F18.15 1000000yr age              [3.98/35.79]? age since ZAMS
+436-455  F20.17 1000000yr e_age            [0.09/11.66]? uncertainty on age
+                                       since ZAMS
+457-474  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
+                                       temperature
+476-496  F21.19    K      e_log_Teff       [0.0/0.17]? uncertainty of log10 of
+                                       effective temperature
+498-515  F18.16    solLum log_L            [3.68/5.21]? log10 of luminosity
+517-536  F20.18    solLum e_log_L          [0.0/0.82]? uncertainty on log10 of
+                                       luminosity
+538-555  F18.16    cm.s-2 log_g            [3.56/3.95]? log10 of surface gravity
+557-577  F21.19    cm.s-2 e_log_g          [0.0/0.17]? uncertainty on log10 of
+                                       surface gravity
+579-596  F18.16    solRad log_R            [0.69/1.03]? log10 of stellar radius
+598-618  F21.19    solRad e_log_R          [0.0/0.09]? uncertainty of log10 of
+                                       stellar radius
+620-638  F19.16   solMass Mcc              [1.32/12.36]? convective core mass
+640-659  F20.18   solMass e_Mcc            [0.01/10.0]? uncertainty on
+                                       convective core mass
+661-679  F19.17    ---    Mcc_over_M       [0.16/0.44]? convective core mass
+                                       relative to total mass
+681-701  F21.19    ---    e_Mcc_over_M     [0.0/0.49]? uncertainty on convective
+                                       core mass relative to total mass
 --------------------------------------------------------------------------------
 
 Byte-by-byte Description of file: Models4.dat
@@ -580,28 +582,28 @@ Byte-by-byte Description of file: Models4.dat
                                        largest difference between an observed
                                        and the best model's zonal frequency
  72- 89  F18.15   solMass M                [7.74/28.63]? current mass
- 91-109  F19.17   solMass e_M              [0.13/0.71]? uncertainty on current
+ 91-109  F19.17   solMass e_M              [0.13/0.72]? uncertainty on current
                                        mass
 111-128  F18.16   cm2.s-1 logD             [1.22/6.0]? log10 of mixing strength
                                        at the base of the envelope
-130-147  F18.16   cm2.s-1 e_logD           [0.5/4.31]? uncertainty on log10 of
+130-147  F18.16   cm2.s-1 e_logD           [0.5/4.3]? uncertainty on log10 of
                                        mixing strength at the base of the
                                        envelope
-149-168  F20.18    ---    fov              [0.0/0.04]? overshoot parameter
-170-190  F21.19    ---    e_fov            [0.0/0.01]? uncertainty on overshoot
+149-169  F21.19    ---    fov              [0.0/0.04]? overshoot parameter
+171-191  F21.19    ---    e_fov            [0.0/0.01]? uncertainty on overshoot
                                        parameter
-192-210  F19.17    ---    Xc               [0.03/0.4]? central hydrogen mass
+193-211  F19.17    ---    Xc               [0.03/0.4]? central hydrogen mass
                                        fraction
-212-232  F21.19    ---    e_Xc             [0.0/0.04]? uncertainty on central
+213-233  F21.19    ---    e_Xc             [0.0/0.04]? uncertainty on central
                                        hydrogen mass fraction
-234-252  F19.17    ---    X'c              [0.04/0.56]? normalised central
+235-253  F19.17    ---    X'c              [0.04/0.56]? normalised central
                                        hydrogen mass fraction
-254-274  F21.19    ---    e_X'c            [0.0/0.05]? uncertainty on normalised
+255-275  F21.19    ---    e_X'c            [0.0/0.05]? uncertainty on normalised
                                        central hydrogen mass fraction
-276-295  F20.18    d-1    frot             [0.01/0.74]? rotation frequency
+277-296  F20.18    d-1    frot             [0.01/0.74]? rotation frequency
                                        measured when fitting all observed
                                        signals
-297-318  E22.17    d-1    e_frot           [0.0/0.04]? uncertainty on rotation
+298-318  E21.16    d-1    e_frot           [0.0/0.04]? uncertainty on rotation
                                        frequency measured when fitting all
                                        observed signals
 320-322  F3.1      d-1    b_frot           ? bias on rotation frequency measured
@@ -618,33 +620,32 @@ Byte-by-byte Description of file: Models4.dat
                                        to the critical rotation frequency
                                        measured when fitting all observed
                                        signals
-372-391  F20.16    km.s-1 vrot             [3.73/351.71]? surface rotation speed
-393-413  F21.18    km.s-1 e_vrot           [0.01/13.77]? uncertainty on surface
+372-390  F19.15    km.s-1 vrot             [3.73/351.71]? surface rotation speed
+392-411  F20.17    km.s-1 e_vrot           [0.01/13.77]? uncertainty on surface
                                        rotation speed
-415-432  F18.15 1000000yr age              [3.98/35.79]? age since ZAMS
-434-452  F19.17 1000000yr e_age            [0.1/3.28]? uncertainty on age since
+413-430  F18.15 1000000yr age              [3.98/35.79]? age since ZAMS
+432-450  F19.17 1000000yr e_age            [0.1/3.28]? uncertainty on age since
                                        ZAMS
-454-471  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
+452-469  F18.16    K      log_Teff         [4.28/4.56]? log10 of effective
                                        temperature
-473-493  F21.19    K      e_log_Teff       [0.0/0.02]? uncertainty of log10 of
+471-491  F21.19    K      e_log_Teff       [0.0/0.02]? uncertainty of log10 of
                                        effective temperature
-495-512  F18.16    solLum log_L            [3.68/5.21]? log10 of luminosity
-514-533  F20.18    solLum e_log_L          [0.0/0.1]? uncertainty on log10 of
+493-510  F18.16    solLum log_L            [3.68/5.21]? log10 of luminosity
+512-532  F21.19    solLum e_log_L          [0.0/0.09]? uncertainty on log10 of
                                        luminosity
-535-552  F18.16    cm.s-2 log_g            [3.56/3.95]? log10 of surface gravity
-554-574  F21.19    cm.s-2 e_log_g          [0.0/0.03]? uncertainty on log10 of
+534-551  F18.16    cm.s-2 log_g            [3.56/3.95]? log10 of surface gravity
+553-573  F21.19    cm.s-2 e_log_g          [0.0/0.03]? uncertainty on log10 of
                                        surface gravity
-576-593  F18.16    solRad log_R            [0.69/1.03]? log10 of stellar radius
-595-615  F21.19    solRad e_log_R          [0.0/0.01]? uncertainty of log10 of
+575-592  F18.16    solRad log_R            [0.69/1.03]? log10 of stellar radius
+594-614  F21.19    solRad e_log_R          [0.0/0.01]? uncertainty of log10 of
                                        stellar radius
-617-635  F19.16   solMass Mcc              [1.32/12.36]? convective core mass
-637-656  F20.18   solMass e_Mcc            [0.01/0.33]? uncertainty on
+616-634  F19.16   solMass Mcc              [1.32/12.36]? convective core mass
+636-655  F20.18   solMass e_Mcc            [0.01/0.33]? uncertainty on
                                        convective core mass
-658-676  F19.17    ---    Mcc_over_M       [0.16/0.44]? convective core mass
+657-675  F19.17    ---    Mcc_over_M       [0.16/0.44]? convective core mass
                                        relative to total mass
-678-698  F21.19    ---    e_Mcc_over_M     [0.0/0.02]? uncertainty on convective
+677-697  F21.19    ---    e_Mcc_over_M     [0.0/0.02]? uncertainty on convective
                                        core mass relative to total mass
-
 --------------------------------------------------------------------------------
 
 Byte-by-byte Description of file: RotSplit.dat
@@ -684,10 +685,10 @@ Byte-by-byte Description of file: RotSplit.dat
 327-344  F18.16 d-1    frot_StORM       [0.01/0.59]? rotation frequency
                                        optimised with StORM including second
                                        order effects
-346-367  E22.17 d-1    e_frot_StORM     [0.0/0.31]? uncertainty on rotation
+346-367  E22.17 d-1    e_frot_StORM     [0.0/0.19]? uncertainty on rotation
                                        frequency optimised with StORM including
                                        second order effects
-369-391  E23.17 d-1    e_frot_StORM     [-0.14/0.22]? bias on rotation frequency
+369-391  E23.17 d-1    b_frot_StORM     [-0.14/0.22]? bias on rotation frequency
                                        optimised with StORM including second
                                        order effects
 393-412  F20.18 d-1    frot_GYRE        [0.01/0.77]? rotation frequency estimate
@@ -711,154 +712,193 @@ Byte-by-byte Description of file: DiffRot.dat
  63- 82  F20.18 d-1    frot                       [0.01/0.59]? rotation
                                                  frequency measured when fitting
                                                  all observed signals
- 84-105  E22.17 d-1    e_l_frot                   [0.0/0.16]? lower uncertainty
-                                                 on rotation frequency measured
+ 84-104  E21.16 d-1    l_frot                     [0.0/0.11]? uncertainty on
+                                                 rotation frequency measured
                                                  when fitting all observed
                                                  signals
-107-129  E23.17 d-1    e_u_frot                   [-0.07/0.11]? upper
-                                                 uncertainty on rotation
+106-128  E23.17 d-1    b_frot                     [-0.07/0.11]? bias on rotation
                                                  frequency measured when fitting
                                                  all observed signals
-131-149  F19.17 ---    X'c                        [0.06/0.64]? rotation
-                                                 frequency relative to the
-                                                 critical rotation frequency
-                                                 measured when fitting all
-                                                 observed signals
-151-171  F21.19 ---    e_X'c                      [0.0/0.21]? uncertainty on
-                                                 rotation frequency relative to
-                                                 the critical rotation frequency
-                                                 measured when fitting all
-                                                 observed signals
-    173  I1     ---    N_multiplets               [1/4]? normalised central
-                                                 hydrogen mass fraction
-175-192  F18.16 d-1    f_zonal_multiplet1         [3.88/9.14]? uncertainty on
+130-148  F19.17 ---    X'c                        [0.06/0.64]? normalised
+                                                 central hydrogen mass fraction
+150-170  F21.19 ---    e_X'c                      [0.0/0.14]? uncertainty on
                                                  normalised central hydrogen
                                                  mass fraction
-194-195  I2     ---    n_multiplet1               [-2/3]? number of observed
+    172  I1     ---    N_multiplets               [1/4]? number of observed
                                                  rotationally split multiplets
-    197  I1     ---    l_multiplet1               [1/2]? zonal frequency of the
+174-191  F18.16 d-1    f_zonal_multiplet1         [3.88/9.14]? zonal frequency
+                                                 of the first observed
+                                                 identified multiplet
+193-194  I2     ---    n_multiplet1               [-2/3]? radial order of the
                                                  first observed identified
                                                  multiplet
-199-216  F18.16 d-1    frot_multiplet1            [0.01/0.59]? radial order of
-                                                 the first observed identified
-                                                 multiplet
-218-238  E21.16 d-1    e_frot_multiplet1          [0.0/0.12]? degree of the
-                                                 first observed identified
-                                                 multiplet
-240-261  E22.17 d-1    b_frot_multiplet1          [-0.14/0.22]? rotation rate
+    196  I1     ---    l_multiplet1               [1/2]? degree of the first
+                                                 observed identified multiplet
+198-215  F18.16 d-1    frot_multiplet1            [0.01/0.59]? rotation rate
                                                  optimised for the first
-                                                 observed identified
-                                                 multipletlower uncertainty on
+                                                 observed identified multiplet
+217-238  E22.17 d-1    e_frot_multiplet1          [0.0/0.12]? uncertainty on
                                                  rotation rate optimised for the
                                                  first observed identified
                                                  multiplet
-263-280  F18.16 ---    r_rel_KnlMode_multiplet1   [0.09/0.98]? upper uncertainty
-                                                 on rotation rate optimised for
-                                                 the first observed identified
+240-261  E22.17 d-1    b_frot_multiplet1          [-0.14/0.22]? bias on rotation
+                                                 rate optimised for the first
+                                                 observed identified multiplet
+263-280  F18.16 ---    r_rel_KnlMode_multiplet1   [0.09/0.98]? radius relative
+                                                 to total radius of maximum of
+                                                 the sensitivity kernel of the
+                                                 first observed identified
                                                  multiplet
 282-298  F17.15 ---    r_rel_KnlMean_multiplet1   [0.3/0.77]? radius relative to
-                                                 total radius of maximum of the
+                                                 total radius of mean of
                                                  sensitivity kernel of the first
                                                  observed identified multiplet
 300-316  F17.15 ---    r_rel_KnlMedian_multiplet1 [0.14/0.86]? radius relative
-                                                 to total radius of mean of
-                                                 sensitivity kernel of the first
+                                                 to total radius of median of
+                                                 the sensitivity kernel of the
+                                                 first observed identified
+                                                 multiplet
+318-337  F20.18 ---    r_rel_KnlFWHM_multiplet1   [0.01/0.42]? full-width at
+                                                 half maximum of the sensitivity
+                                                 kernel of the first observed
+                                                 identified multiplet
+339-357  F19.17 ---    r_rel_KnlP25_multiplet1    [0.09/0.84]? radius relative
+                                                 to total radius of 25
+                                                 percentile of the sensitivity
+                                                 kernel of the first observed
+                                                 identified multiplet
+359-377  F19.17 ---    r_rel_KnlP75_multiplet1    [0.09/0.84]? radius relative
+                                                 to total radius of 75
+                                                 percentile of the sensitivity
+                                                 kernel of the first observed
+                                                 identified multiplet
+379-395  F17.15 d-1    f_zonal_multiplet2         [3.5/7.45]? zonal frequency of
+                                                 the second observed identified
+                                                 multiplet
+397-398  I2     ---    n_multiplet2               [-2/2]? radial order of the
+                                                 second observed identified
+                                                 multiplet
+    400  I1     ---    l_multiplet2               [1/2]? degree of the second
                                                  observed identified multiplet
-318-334  F17.15 d-1    f_zonal_multiplet2         [3.5/7.45]? radius relative to
-                                                 total radius of median of the
-                                                 sensitivity kernel of the first
-                                                 observed identified multiplet
-336-337  I2     ---    n_multiplet2               [-2/2]? zonal frequency of the
-                                                 second observed identified
-                                                 multiplet
-    339  I1     ---    l_multiplet2               [1/2]? radial order of the
-                                                 second observed identified
-                                                 multiplet
-341-358  F18.16 d-1    frot_multiplet2            [0.01/0.47]? degree of the
-                                                 second observed identified
-                                                 multiplet
-360-379  E20.15 d-1    e_frot_multiplet2          [0.0/0.08]? rotation rate
+402-419  F18.16 d-1    frot_multiplet2            [0.01/0.47]? rotation rate
                                                  optimised for the second
-                                                 observed identified
-                                                 multipletlower uncertainty on
+                                                 observed identified multiplet
+421-441  E21.16 d-1    e_frot_multiplet2          [0.0/0.19]? uncertainty on
                                                  rotation rate optimised for the
                                                  second observed identified
                                                  multiplet
-381-403  E23.16 d-1    b_frot_multiplet2          [-0.01/0.09]? upper
-                                                 uncertainty on rotation rate
-                                                 optimised for the second
+443-465  E23.16 d-1    b_frot_multiplet2          [-0.01/0.09]? bias on rotation
+                                                 rate optimised for the second
                                                  observed identified multiplet
-405-421  F17.15 ---    r_rel_KnlMode_multiplet2   [0.11/0.91]? radius relative
+467-483  F17.15 ---    r_rel_KnlMode_multiplet2   [0.11/0.91]? radius relative
                                                  to total radius of maximum of
                                                  the sensitivity kernel of the
                                                  second observed identified
                                                  multiplet
-423-439  F17.15 ---    r_rel_KnlMean_multiplet2   [0.21/0.75]? radius relative
+485-501  F17.15 ---    r_rel_KnlMean_multiplet2   [0.21/0.75]? radius relative
                                                  to total radius of mean of
                                                  sensitivity kernel of the
                                                  second observed identified
                                                  multiplet
-441-457  F17.15 ---    r_rel_KnlMedian_multiplet2 [0.12/0.86]? radius relative
+503-519  F17.15 ---    r_rel_KnlMedian_multiplet2 [0.12/0.86]? radius relative
                                                  to total radius of median of
                                                  the sensitivity kernel of the
                                                  second observed identified
                                                  multiplet
-459-475  F17.15 d-1    f_zonal_multiplet3         ? zonal frequency of the third
-                                                 observed identified multiplet
-477-478  I2     ---    n_multiplet3               ? radial order of the third
-                                                 observed identified multiplet
-480-481  I2     ---    l_multiplet3               ? degree of the third observed
+521-540  F20.18 ---    r_rel_KnlFWHM_multiplet2   [0.01/0.45]? full-width at
+                                                 half maximum of the sensitivity
+                                                 kernel of the second observed
                                                  identified multiplet
-483-500  F18.16 d-1    frot_multiplet3            ? rotation rate optimised for
+542-560  F19.17 ---    r_rel_KnlP25_multiplet2    [0.11/0.64]? radius relative
+                                                 to total radius of 25
+                                                 percentile of the sensitivity
+                                                 kernel of the second observed
+                                                 identified multiplet
+562-580  F19.17 ---    r_rel_KnlP75_multiplet2    [0.11/0.64]? radius relative
+                                                 to total radius of 75
+                                                 percentile of the sensitivity
+                                                 kernel of the second observed
+                                                 identified multiplet
+582-598  F17.15 d-1    f_zonal_multiplet3         ? zonal frequency of the third
+                                                 observed identified multiplet
+600-601  I2     ---    n_multiplet3               ? radial order of the third
+                                                 observed identified multiplet
+603-604  I2     ---    l_multiplet3               ? degree of the third observed
+                                                 identified multiplet
+606-623  F18.16 d-1    frot_multiplet3            ? rotation rate optimised for
                                                  the third observed identified
-                                                 multipletlower uncertainty on
-                                                 rotation rate optimised for the
-                                                 third observed identified
                                                  multiplet
-502-522  F21.19 d-1    e_frot_multiplet3          ? upper uncertainty on
-                                                 rotation rate optimised for the
-                                                 third observed identified
-                                                 multiplet
-524-544  E21.16 d-1    b_frot_multiplet3          ? radius relative to total
+625-646  E22.17 d-1    e_frot_multiplet3          ? uncertainty on rotation rate
+                                                 optimised for the third
+                                                 observed identified multiplet
+648-668  E21.16 d-1    b_frot_multiplet3          ? bias on rotation rate
+                                                 optimised for the third
+                                                 observed identified multiplet
+670-686  F17.15 ---    r_rel_KnlMode_multiplet3   ? radius relative to total
                                                  radius of maximum of the
                                                  sensitivity kernel of the third
                                                  observed identified multiplet
-546-562  F17.15 ---    r_rel_KnlMode_multiplet3   ? radius relative to total
+688-704  F17.15 ---    r_rel_KnlMean_multiplet3   ? radius relative to total
                                                  radius of mean of sensitivity
                                                  kernel of the third observed
                                                  identified multiplet
-564-580  F17.15 ---    r_rel_KnlMean_multiplet3   ? radius relative to total
+706-722  F17.15 ---    r_rel_KnlMedian_multiplet3 ? radius relative to total
                                                  radius of median of the
                                                  sensitivity kernel of the third
                                                  observed identified multiplet
-582-598  F17.15 ---    r_rel_KnlMedian_multiplet3 ? zonal frequency of the
+724-742  F19.17 ---    r_rel_KnlFWHM_multiplet3   ? full-width at half maximum
+                                                 of the sensitivity kernel of
+                                                 the third observed identified
+                                                 multiplet
+744-762  F19.17 ---    r_rel_KnlP25_multiplet3    ? radius relative to total
+                                                 radius of 25 percentile of the
+                                                 sensitivity kernel of the third
+                                                 observed identified multiplet
+764-782  F19.17 ---    r_rel_KnlP75_multiplet3    ? radius relative to total
+                                                 radius of 75 percentile of the
+                                                 sensitivity kernel of the third
+                                                 observed identified multiplet
+784-791  F8.6   d-1    f_zonal_multiplet4         ? zonal frequency of the
                                                  fourth observed identified
                                                  multiplet
-600-607  F8.6   d-1    f_zonal_multiplet4         ? radial order of the fourth
+793-794  I2     ---    n_multiplet4               ? radial order of the fourth
                                                  observed identified multiplet
-609-610  I2     ---    n_multiplet4               ? degree of the fourth
+796-797  I2     ---    l_multiplet4               ? degree of the fourth
                                                  observed identified multiplet
-612-613  I2     ---    l_multiplet4               ? rotation rate optimised for
+799-816  F18.16 d-1    frot_multiplet4            ? rotation rate optimised for
                                                  the fourth observed identified
-                                                 multipletlower uncertainty on
-                                                 rotation rate optimised for the
-                                                 fourth observed identified
                                                  multiplet
-615-632  F18.16 d-1    frot_multiplet4            ? upper uncertainty on
-                                                 rotation rate optimised for the
-                                                 fourth observed identified
-                                                 multiplet
-634-654  F21.19 d-1    e_frot_multiplet4          ? radius relative to total
+818-838  F21.19 d-1    e_frot_multiplet4          ? uncertainty on rotation rate
+                                                 optimised for the fourth
+                                                 observed identified multiplet
+840-861  F22.19 d-1    b_frot_multiplet4          ? bias on rotation rate
+                                                 optimised for the fourth
+                                                 observed identified multiplet
+863-879  F17.15 ---    r_rel_KnlMode_multiplet4   ? radius relative to total
                                                  radius of maximum of the
                                                  sensitivity kernel of the
                                                  fourth observed identified
                                                  multiplet
-656-677  F22.19 d-1    b_frot_multiplet4          ? radius relative to total
+881-897  F17.15 ---    r_rel_KnlMean_multiplet4   ? radius relative to total
                                                  radius of mean of sensitivity
                                                  kernel of the fourth observed
                                                  identified multiplet
-679-695  F17.15 ---    r_rel_KnlMode_multiplet4   ? radius relative to total
+899-915  F17.15 ---    r_rel_KnlMedian_multiplet4 ? radius relative to total
                                                  radius of median of the
+                                                 sensitivity kernel of the
+                                                 fourth observed identified
+                                                 multiplet
+917-936  F20.18 ---    r_rel_KnlFWHM_multiplet4   ? full-width at half maximum
+                                                 of the sensitivity kernel of
+                                                 the fourth observed identified
+                                                 multiplet
+938-956  F19.17 ---    r_rel_KnlP25_multiplet4    ? radius relative to total
+                                                 radius of 25 percentile of the
+                                                 sensitivity kernel of the
+                                                 fourth observed identified
+                                                 multiplet
+958-976  F19.17 ---    r_rel_KnlP75_multiplet4    ? radius relative to total
+                                                 radius of 75 percentile of the
                                                  sensitivity kernel of the
                                                  fourth observed identified
                                                  multiplet
